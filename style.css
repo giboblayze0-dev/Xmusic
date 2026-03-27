@@ -16,7 +16,27 @@ p{
 h4{
   background-color: yellow;
 }
-img{
-  display: center;
+.music-box {
+  text-align: center;
+  margin: 20px auto;
+}
 
+.music-box img {
+  width: 200px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.music-box audio {
+  margin-top: 10px;
+  width: 250px;
+}
+
+.music-box a {
+  display: inline-block;
+  margin-top: 10px;
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
 }
