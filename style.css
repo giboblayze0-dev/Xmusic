@@ -1,0 +1,18 @@
+h2{
+  color: blue;
+  display: fixed;
+  text-align: center;
+
+  
+}
+p{
+  color: darkblue;
+  text-align: center;
+  padding:10px;
+  background-color: grey;
+  
+  
+}
+h4{
+  background-color: yellow;
+}
