@@ -47,3 +47,13 @@ img {
   display: block;
   margin: 10px auto;   /* center image */
 }
+
+<style>
+.song {
+  margin: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
+</style>
