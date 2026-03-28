@@ -41,6 +41,7 @@
 <h4>Best Gibo Blayze upload music<br>
                                     around Vibe All Time Great choice</h4>
 <br><br>
+<div id="new-music">
 <div class="music-box">
   <h3>Gibo-Blayze-Yankha Phone</h3>
   <img src="basi (1).jpg" height="300" width="400"><br><br>
@@ -50,12 +51,13 @@
     <br>
   <a href="Gibo-Blayze-Yankha-Phoneprod.mp3" download>Download</a>
 </div>
-
+</div>
 
 <br><br><br>
 <h2>TRENDING MUSIC</h2>
 <h4>Best Gibo Blayze download <br>play best music vibe all the time</h4>
 <br><br>
+<div id="trending-music">
 <div class="music-box">
 <h3>Gibo-Blayze-Why Me</h3>
 <img src="basi (1).jpg" height="300" width="400"><br><br>
@@ -65,12 +67,13 @@
     <br>
 <a href="Gibo-Blayze-Why-Meprod.mp3" download>Download</a>
 </div>
-
+</div>
 
 <br><br><br>
 <h2>ABULM</h2>
 <h4>Best Gibo Blayze download <br>play best music vibe all the time</h4>
 <br><br>
+    <div id="album">
 <div class="music-box">
   <h3>Gibo-Blayze-Ndatopa Ine</h3>
   <img src="basi (1).jpg" height="300"width="400"><br><br>
@@ -82,7 +85,7 @@
 
   <a href="Gibo-Blayze-Ndatopa-IneProd.Tingset.mp3" downloa>Download</a>
 </div>
-
+    </div>
 <br><br><br>
 <h2>VIDEOS</h2>
 <br><br>
@@ -93,5 +96,29 @@
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="index.home">BACKTOP</a></p>
+    <script>
+function setupSection(sectionId) {
+  let songs = document.querySelectorAll(`#${sectionId} .song`);
+
+  songs.forEach((song, index) => {
+    if (index >= 5) {
+      song.classList.add("hidden");
+    }
+  });
+}
+
+function loadMore(sectionId) {
+  let hiddenSongs = document.querySelectorAll(`#${sectionId} .hidden`);
+
+  for (let i = 0; i < 5 && i < hiddenSongs.length; i++) {
+    hiddenSongs[i].classList.remove("hidden");
+  }
+}
+
+// Run when page loads
+setupSection("new-music");
+setupSection("trending-music");
+setupSection("album-music");
+                 </script>
 </body>
 </html>
