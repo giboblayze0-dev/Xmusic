@@ -48,7 +48,7 @@ img {
   margin: 10px auto;   /* center image */
 }
 
-<style>
+
 .song {
   margin: 10px 0;
 }
@@ -56,4 +56,47 @@ img {
 .hidden {
   display: none;
 }
-</style>
+body {
+  background-color: #0f0f0f;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #00ffcc;
+}
+
+.music-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.song {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.song img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+button {
+  background: #00ffcc;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
