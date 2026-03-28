@@ -42,7 +42,7 @@ color: #00ffcc;
   font-weight: bold;
 }
 img {
-  width: 200px;        /* increase size */
+  width: 100px;        /* increase size */
   height: auto;        /* keep ratio */
   border-radius: 10px; /* optional nice look */
   display: block;
