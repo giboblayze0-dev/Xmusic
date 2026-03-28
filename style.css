@@ -17,32 +17,9 @@ h4{
   background-color: #111;
 color: #00ffcc;
 }
-.music-box {
-  text-align: center;
-  margin: 20px auto;
-}
 
-.music-box img {
-  width: 200px;
-  border-radius: 10px;
-  display: block;
-  margin: 0 auto;
-}
-
-.music-box audio {
-  margin-top: 10px;
-  width: 250px;
-}
-
-.music-box a {
-  display: inline-block;
-  margin-top: 10px;
-  color: blue;
-  text-decoration: none;
-  font-weight: bold;
-}
 img {
-  width: 100px;        /* increase size */
+  width: 50px;        /* increase size */
   height: auto;        /* keep ratio */
   border-radius: 10px; /* optional nice look */
   display: block;
@@ -84,12 +61,12 @@ h1 {
 }
 
 .song img {
-  width: 100%;
+  width: 50%;
   border-radius: 10px;
 }
 
 audio {
-  width: 100%;
+  width: 50%;
   margin-top: 10px;
 }
 
