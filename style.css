@@ -42,11 +42,11 @@ color: #00ffcc;
   font-weight: bold;
 }
 img {
-  width: 250px;        /* increase size */
+  width: 200px;        /* increase size */
   height: auto;        /* keep ratio */
   border-radius: 10px; /* optional nice look */
   display: block;
-  margin: 10px auto;   /* center image */
+  margin: 5px auto;   /* center image */
 }
 
 
