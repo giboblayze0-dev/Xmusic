@@ -40,3 +40,10 @@ h4{
   text-decoration: none;
   font-weight: bold;
 }
+img {
+  width: 250px;        /* increase size */
+  height: auto;        /* keep ratio */
+  border-radius: 10px; /* optional nice look */
+  display: block;
+  margin: 10px auto;   /* center image */
+}
