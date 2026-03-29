@@ -138,5 +138,25 @@ setupSection("new-music");
 setupSection("trending-music");
 setupSection("album-music");
                  </script>
+    <input type="text" id="search" placeholder="Search music...">
+
+<section class="song"><h3>Gibo Blayze - Yankha Phone</h3></section>
+<section class="song"><h3>Another Song</h3></section>
+
+<script>
+document.getElementById("search").addEventListener("keyup", function() {
+  let value = this.value.toLowerCase();
+  let songs = document.querySelectorAll(".song");
+
+  songs.forEach(song => {
+    let text = song.textContent.toLowerCase();
+    if (text.includes(value)) {
+      song.style.display = "block";
+    } else {
+      song.style.display = "none";
+    }
+  });
+});
+</script>
 </body>
 </html>
