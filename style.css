@@ -20,10 +20,7 @@ h4{
 body{
   background-color:darkblue;
 }
-img{
-  display: block;
-}
-download-btn{
-  display: block;
-  background-color:red;
+.music-box {
+  text-align: center;
+  margin: 20px;
 }
