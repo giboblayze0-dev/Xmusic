@@ -24,25 +24,14 @@
 
 </head>
 <body>
-    <header class="navbar">
-  <div class="nav-left">
-    <span class="menu-btn" onclick="toggleMenu()">☰ MENU</span>
-  </div>
-
-  <div class="nav-right">
-    <input type="text" id="searchInput" placeholder="Search music...">
-    <button onclick="searchMusic()">🔍</button>
-  </div>
-</header>
-
-<!-- Side Menu -->
-<div id="sideMenu" class="side-menu">
+    
+<nav>
   <a href="#home">Home</a>
   <a href="#new-music">new-music</a>
   <a href="#trending-music">trending-music</a>
   <a href="#album">ALBUM</a>
   <a href="#videos">VIDEOS</a>
-</div>
+</nav>
 <br><br><br>
 <div id="new-music">
 <h2>NEW MUSIC</h2>
@@ -106,58 +95,6 @@
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="index.home">BACKTOP</a></p>
-    <script>
-function toggleMenu() {
-  let menu = document.getElementById("sideMenu");
-  if (menu.style.left === "0px") {
-    menu.style.left = "-200px";
-  } else {
-    menu.style.left = "0px";
-  }
-}
 
-function searchMusic() {
-  let input = document.getElementById("searchInput").value.toLowerCase();
-
-  window.location.href = "search.html?query=" + input;
-}
-    </script><h2 id="resultTitle"></h2>
-
-<div id="results"></div>
-
-<script>
-const songs = [
-  {
-    title: "Malinga - Wicked Inna Bed",
-    category: "Dancehall",
-    link: "song1.html"
-  },
-  {
-    title: "Another Song",
-    category: "Reggae",
-    link: "song2.html"
-  }
-];
-
-let params = new URLSearchParams(window.location.search);
-let query = params.get("query");
-
-document.getElementById("resultTitle").innerText =
-  "Search Results For " + query;
-
-let resultsDiv = document.getElementById("results");
-
-songs.forEach(song => {
-  if (song.title.toLowerCase().includes(query)) {
-    resultsDiv.innerHTML += `
-      <div class="card">
-        <h3>${song.title}</h3>
-        <p>${song.category}</p>
-        <a href="${song.link}">View Song</a>
-      </div>
-    `;
-  }
-});
-            </script>
 </body>
 </html>
