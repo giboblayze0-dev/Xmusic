@@ -24,17 +24,25 @@
 
 </head>
 <body>
+    <header class="navbar">
+  <div class="nav-left">
+    <span class="menu-btn" onclick="toggleMenu()">☰ MENU</span>
+  </div>
 
-<nav>
-  <ul>
-    
-    <li><a href="#home">HOME</a></li>
-    <li><a href="#new-music">NEW MUSIC</a></li>
-    <li><a href="#trending-music">TRENDING MUSIC</a></li>
-    <li><a href="#album">ALBUM</a></li>
-    <li><a href="#videos">VIDEOS</a></li>
-  </ul>
-</nav>
+  <div class="nav-right">
+    <input type="text" id="searchInput" placeholder="Search music...">
+    <button onclick="searchMusic()">🔍</button>
+  </div>
+</header>
+
+<!-- Side Menu -->
+<div id="sideMenu" class="side-menu">
+  <a href="#home">Home</a>
+  <a href="#new-music">new-music</a>
+  <a href="#trending-music">trending-music</a>
+  <a href="#album">ALBUM</a>
+  <a href="#videos">VIDEOS</a>
+</div>
 <br><br><br>
 <div id="new-music">
 <h2>NEW MUSIC</h2>
