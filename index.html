@@ -24,7 +24,11 @@
 
 </head>
 <body>
-    
+    <input type="text" id="search" placeholder="Search music..." onkeyup="searchSongs()">
+
+<div id="results"></div>
+
+<script src="search.js"></script>
 <nav>
   <a href="#home">Home</a>
   <a href="#new-music">new-music</a>
@@ -95,6 +99,69 @@
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="index.home">BACKTOP</a></p>
+    <script>
+const songs = [
 
+{
+title: "Yankha Phone",
+artist: "Gibo Blayze",
+image: "images/basi (1).jpg",
+audio: "music/Gibo-Blayze-Yankha-PhoneProd.Tingset.mp3"
+},
+
+{
+title: "Why Me",
+artist: "Gibo Blayze",
+image: "images/basi (1).jpg",
+audio: "music/Gibo-Blayze-Why-MeProd.Tingset.mp3"
+},
+
+{
+title: "Ndatopa Ine",
+artist: "Gibo Blayze",
+image: "images/basi (1).jpg",
+audio: "music/Gibo-Blayze-Ndatopa-IneProd.Tingset.mp3"
+}
+
+];
+
+
+function searchSongs(){
+
+let input = document.getElementById("search").value.toLowerCase();
+let results = document.getElementById("results");
+
+results.innerHTML="";
+
+songs.forEach(song=>{
+
+if(song.title.toLowerCase().includes(input) || song.artist.toLowerCase().includes(input)){
+
+results.innerHTML += `
+
+<div class="song">
+
+<img src="${song.image}" width="120">
+
+<h3>${song.title}</h3>
+
+<p>${song.artist}</p>
+
+<audio controls src="${song.audio}"></audio>
+
+<br>
+
+<a href="${song.audio}" download>Download</a>
+
+</div>
+
+`;
+
+}
+
+});
+
+}
+</script>
 </body>
 </html>
