@@ -1,7 +1,8 @@
 h2{
-  color: blue;
+  color: white;
   display: fixed;
   text-align: center;
+  background-color: green;
 
   
 }
@@ -18,4 +19,12 @@ h4{
 }
 body{
   background-color:darkblue;
+}
+img{
+  position: center;
+}
+button{
+  position: center;
+  display: center;
+  background-color:red;
 }
