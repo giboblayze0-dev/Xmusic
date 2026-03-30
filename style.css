@@ -1,4 +1,4 @@
-h1{
+h2{
   color: blue;
   display: fixed;
   text-align: center;
@@ -14,68 +14,5 @@ p{
   
 }
 h4{
-  background-color: #111;
-color: #00ffcc;
-}
-
-img {
-  width: 50px;        /* increase size */
-  height: auto;        /* keep ratio */
-  border-radius: 10px; /* optional nice look */
-  display: block;
-  margin: 5px auto;   /* center image */
-}
-
-
-.song {
-  margin: 10px 0;
-}
-
-.hidden {
-  display: none;
-}
-body {
-  font-size:100;
-  color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-}
-
-h1 {
-  text-align: center;
-  color: #00ffcc;
-}
-
-.music-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.song {
-  background: #1a1a1a;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.song img {
-  width: 50%;
-  border-radius: 10px;
-}
-
-audio {
-  width: 50%;
-  margin-top: 10px;
-}
-
-button {
-  background: #00ffcc;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  position: center;
+  background-color: yellow;
 }
