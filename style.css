@@ -21,10 +21,9 @@ body{
   background-color:darkblue;
 }
 img{
-  position: center;
+  display: block;
 }
-button{
-  position: center;
-  display: center;
+download-btn{
+  display: block;
   background-color:red;
 }
