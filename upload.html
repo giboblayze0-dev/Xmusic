@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Music</title>
+</head>
+<body>
 
+<h2>Upload Song</h2>
+
+<input id="title" placeholder="Song title"><br><br>
+<input id="artist" placeholder="Artist"><br><br>
+<input id="url" placeholder="Cloudinary URL"><br><br>
+
+<button onclick="upload()">Upload</button>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "YOUR-KEY",
+  authDomain: "YOUR-PROJECT.firebaseapp.com",
+  databaseURL: "https://YOUR-PROJECT.firebaseio.com",
+  projectId: "YOUR-PROJECT",
+};
+
+firebase.initializeApp(firebaseConfig);
+
+function upload() {
+  let title = document.getElementById("title").value;
+  let artist = document.getElementById("artist").value;
+  let url = document.getElementById("url").value;
+
+  firebase.database().ref("songs").push({
+    title: title,
+    artist: artist,
+    url: url
+  });
+
+  alert("Uploaded!");
+}
+</script>
+
+</body>
+</html>
