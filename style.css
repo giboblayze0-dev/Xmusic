@@ -42,6 +42,7 @@ nav{
   top:2;
   background-color: green;
   align-items: center;
+  z-index:1000;
 }
 nav a{
   font-size:18;
