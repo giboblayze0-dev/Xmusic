@@ -80,6 +80,7 @@
         </audio>
         <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/Taycee-Be-StrongProd.Taycee_rnudv4.mp3" download>Download</a>
     </div>
+    <button onclick="LoadMore('new-music')">LoadMore</button>
 <br><br><br>
 <div id="trending-music">
 <h2>TRENDING MUSIC</h2>
@@ -105,7 +106,8 @@
     </audio>
     <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/MIGOZ_REMIX_0_clqstz.mp3"
         download>Download</a>
-
+</div>
+    <button onclick="LoadMore('trending-music')">LoadMore</button>
 
 <br><br><br>
 <div id="album">
@@ -123,6 +125,7 @@
   <a href="music/Gibo-Blayze-Ndatopa-IneProd.Tingset.mp3" download>Download</a>
 </div>
 </div>
+    <button onclick="LoadMore('album')">LoadMore</button>
 
 <br><br><br>
 <div id="videos">
@@ -131,6 +134,7 @@
 
 
 </div>
+    <button onclick="LoadMore('videos')">LoadMore</button>
 
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
@@ -199,6 +203,30 @@ results.innerHTML += `
 
 }
 </script>
+    <script>
+function setupSection(sectionId) {
+  let songs = document.querySelectorAll(`#${sectionId} .song`);
+
+  songs.forEach((song, index) => {
+    if (index >= 5) {
+      song.classList.add("hidden");
+    }
+  });
+}
+
+function loadMore(sectionId) {
+  let hiddenSongs = document.querySelectorAll(`#${sectionId} .hidden`);
+
+  for (let i = 0; i < 5 && i < hiddenSongs.length; i++) {
+    hiddenSongs[i].classList.remove("hidden");
+  }
+}
+
+// Run when page loads
+setupSection("new-music");
+setupSection("trending-music");
+setupSection("album-music");
+    </script>
 
 </body>
 </html>
