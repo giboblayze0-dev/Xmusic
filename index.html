@@ -160,29 +160,31 @@
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="#home">Developer Gibo Blayze</a></p>
-    <script>
-function setupSection(sectionId) {
-  let songs = document.querySelectorAll(`#${sectionId} .song`);
+    <<script>
+let items = document.querySelectorAll(".song"); // <-- change here
+let loadMoreBtn = document.getElementById("loadMore");
 
-  songs.forEach((song, index) => {
-    if (index >= 5) {
-      song.classList.add("hidden");
-    }
-  });
+let visible = 3;
+
+// show first items
+for (let i = 0; i < visible; i++) {
+  if (items[i]) items[i].style.display = "block";
 }
 
-function loadMore(sectionId) {
-  let hiddenSongs = document.querySelectorAll(`#${sectionId} .hidden`);
+loadMoreBtn.addEventListener("click", () => {
+  let next = visible + 3;
 
-  for (let i = 0; i < 5 && i < hiddenSongs.length; i++) {
-    hiddenSongs[i].classList.remove("hidden");
+  for (let i = visible; i < next; i++) {
+    if (items[i]) items[i].style.display = "block";
   }
-}
 
-// Run when page loads
-setupSection("new-music");
-setupSection("trending-music");
-setupSection("album-music");
+  visible = next;
+
+  // hide button if no more items
+  if (visible >= items.length) {
+    loadMoreBtn.style.display = "none";
+  }
+});
     </script>
     <script>
 const songs = [
