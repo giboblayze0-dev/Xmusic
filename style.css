@@ -39,5 +39,16 @@ body{
 }
 nav{
   position:fixed;
-  display:block;
+  top:0;
+  background-color: green;
+  align-items: center;
 }
+nav a{
+  font-size:18;
+  color: white;
+  padding:10px;
+}
+nav a:hover{
+  color: yellow;
+}
+
