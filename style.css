@@ -51,4 +51,11 @@ nav a{
 nav a:hover{
   color: yellow;
 }
+.search-box{
+  display:block;
+  margin:5px auto;
+  padding:8px;
+  width:8px;
+  font-size:16px;
+}
 
