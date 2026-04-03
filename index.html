@@ -101,7 +101,7 @@
         </audio>
         <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/Taycee-Be-StrongProd.Taycee_rnudv4.mp3" download>Download</a>
     </div>
-    <button onclick="LoadMore('new-music')">LoadMore</button>
+    <button id="loadMore">Load More</button>
 <br><br><br>
 <div id="trending-music">
 <h2>TRENDING MUSIC</h2>
@@ -128,7 +128,7 @@
     <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/MIGOZ_REMIX_0_clqstz.mp3"
         download>Download</a>
 </div>
-    <button onclick="LoadMore('trending-music')">LoadMore</button>
+    <button id="loadMore">Load More</button>
 
 <br><br><br>
 <div id="album">
@@ -146,7 +146,7 @@
   <a href="music/Gibo-Blayze-Ndatopa-IneProd.Tingset.mp3" download>Download</a>
 </div>
 </div>
-    <button onclick="LoadMore('album')">LoadMore</button>
+    <button id="loadMore">Load More</button>
 
 <br><br><br>
 <div id="videos">
@@ -155,36 +155,35 @@
 
 
 </div>
-    <button onclick="LoadMore('videos')">LoadMore</button>
+    <button id="loadMore">Load More</button>
 
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="#home">Developer Gibo Blayze</a></p>
     <<script>
-let items = document.querySelectorAll(".song"); // <-- change here
-let loadMoreBtn = document.getElementById("loadMore");
+let loadMoreBtn = document.querySelector("#loadMore");
+let items = document.querySelectorAll(".music-item");
 
-let visible = 3;
+let currentItem = 4;
 
-// show first items
-for (let i = 0; i < visible; i++) {
-  if (items[i]) items[i].style.display = "block";
+// hide extra items
+for (let i = currentItem; i < items.length; i++) {
+    items[i].style.display = "none";
 }
 
-loadMoreBtn.addEventListener("click", () => {
-  let next = visible + 3;
+loadMoreBtn.onclick = () => {
+    for (let i = currentItem; i < currentItem + 4; i++) {
+        if (items[i]) {
+            items[i].style.display = "block";
+        }
+    }
 
-  for (let i = visible; i < next; i++) {
-    if (items[i]) items[i].style.display = "block";
-  }
+    currentItem += 4;
 
-  visible = next;
-
-  // hide button if no more items
-  if (visible >= items.length) {
-    loadMoreBtn.style.display = "none";
-  }
-});
+    if (currentItem >= items.length) {
+        loadMoreBtn.style.display = "none";
+    }
+};
     </script>
     <script>
 const songs = [
