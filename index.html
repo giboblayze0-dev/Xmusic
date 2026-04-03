@@ -160,82 +160,50 @@
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="#home">Developer Gibo Blayze</a></p>
-
-<script>
-    // JavaScript
-const songs = document.querySelectorAll(".song");
+    <script>
+    const searchInput = document.getElementById("search");
+const musicContainer = document.getElementById("music-container");
 const loadMoreBtn = document.getElementById("load-more");
 
-let visibleCount = 5; // Number of songs to show initially
-songs.forEach((song, index) => {
-  if (index >= visibleCount) song.style.display = "none";
-});
+// Select all songs
+const allSongs = Array.from(document.querySelectorAll(".song"));
+let visibleCount = 5; // initial visible items
 
+// Display function handles both search and load more
+function displaySongs() {
+  const query = searchInput.value.toLowerCase();
+  let count = 0;
+
+  allSongs.forEach(song => {
+    const matches = song.textContent.toLowerCase().includes(query);
+    if (matches && count < visibleCount) {
+      song.style.display = "block";
+      count++;
+    } else {
+      song.style.display = "none";
+    }
+  });
+
+  // Hide load more button if all matches are visible
+  const totalMatches = allSongs.filter(song => song.textContent.toLowerCase().includes(query)).length;
+  loadMoreBtn.style.display = (count < totalMatches) ? "block" : "none";
+}
+
+// Load more functionality
 loadMoreBtn.addEventListener("click", () => {
-  let hiddenSongs = Array.from(songs).filter(song => song.style.display === "none");
-  
-  for (let i = 0; i < 5 && i < hiddenSongs.length; i++) {
-    hiddenSongs[i].style.display = "block";
-  }
-  
-  // Hide button if no more songs
-  if (Array.from(songs).every(song => song.style.display === "block")) {
-    loadMoreBtn.style.display = "none";
-  }
+  visibleCount += 5; // show 5 more items
+  displaySongs();
 });
 
-
-    
-const songs = [
-{
-title: "Reggae Vibes",
-artist: "Gibo Blayze",
-image: "images/reggae.jpg",
-audio: "music/reggae.mp3"
-},
-
-{
-title: "Dancehall Fire",
-artist: "DJ Star",
-image: "images/dancehall.jpg",
-audio: "music/dancehall.mp3"
-}
-];
-
-function searchSongs(){
-let input = document.getElementById("search").value.toLowerCase();
-let results = document.getElementById("results");
-
-results.innerHTML = "";
-
-songs.forEach(song => {
-
-if(song.title.toLowerCase().includes(input)){
-
-results.innerHTML += `
-<div class="song-box">
-
-<img src="${song.image}" width="120">
-
-<h3>${song.title}</h3>
-
-<p>${song.artist}</p>
-
-<audio controls src="${song.audio}"></audio>
-
-<br>
-
-<a href="${song.audio}" download>Download</a>
-
-</div>
-`;
-
-}
-
+// Search functionality
+searchInput.addEventListener("input", () => {
+  visibleCount = 5; // reset visible items on new search
+  displaySongs();
 });
 
-}
-</script>
+// Initial display
+displaySongs();
+    </script>
 
 </body>
 </html>
