@@ -161,92 +161,55 @@
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="#home">Developer Gibo Blayze</a></p>
     <script>
-let loadMoreBtn = document.querySelector("#loadMore");
-let items = document.querySelectorAll(".music-item");
+const searchInput = document.getElementById("search");
+const musicContainer = document.getElementById("music-container");
+const loadMoreBtn = document.getElementById("load-more");
 
-let currentItem = 4;
-
-// hide extra items
-for (let i = currentItem; i < items.length; i++) {
-    items[i].style.display = "none";
-}
-
-loadMoreBtn.onclick = () => {
-    for (let i = currentItem; i < currentItem + 4; i++) {
-        if (items[i]) {
-            items[i].style.display = "block";
-        }
-    }
-
-    currentItem += 4;
-
-    if (currentItem >= items.length) {
-        loadMoreBtn.style.display = "none";
-    }
-};
-    
-const songs = [
-
-{
-title: "Yankha Phone",
-artist: "Gibo Blayze",
-image: "images/basi (1).jpg",
-audio: "music/Gibo-Blayze-Yankha-PhoneProd.Tingset.mp3"
-},
-
-{
-title: "Why Me",
-artist: "Gibo Blayze",
-image: "images/basi (1).jpg",
-audio: "music/Gibo-Blayze-Why-MeProd.Tingset.mp3"
-},
-
-{
-title: "Ndatopa Ine",
-artist: "Gibo Blayze",
-image: "images/basi (1).jpg",
-audio: "music/Gibo-Blayze-Ndatopa-IneProd.Tingset.mp3"
-}
-
+// Example items (replace with your real data or load dynamically)
+const allItemsData = [
+  { title: "Song Name 1", artist: "Artist 1" },
+  { title: "Song Name 2", artist: "Artist 2" },
+  { title: "Song Name 3", artist: "Artist 3" },
+  { title: "Song Name 4", artist: "Artist 4" },
+  { title: "Song Name 5", artist: "Artist 5" },
+  { title: "Song Name 6", artist: "Artist 6" },
 ];
 
+let itemsPerPage = 2;
+let currentIndex = 2; // first 2 already in HTML
 
-function searchmusic-item(){
-
-let input = document.getElementById("search").value.toLowerCase();
-let results = document.getElementById("results");
-
-results.innerHTML="";
-
-music-item.forEach(music-item=>{
-
-if(music-item.title.toLowerCase().includes(input) || music-item.artist.toLowerCase().includes(input)){
-
-results.innerHTML += `
-
-<div class="music-item">
-
-<img src="${music-item.image}" width="120">
-
-<h3>${music-item.title}</h3>
-
-<p>${music-item.artist}</p>
-
-<audio controls src="${music-item.audio}"></audio>
-
-<br>
-
-<a href="${music-item.audio}" download>Download</a>
-
-</div>
-
-`;
-
-}
-
+// Load More function
+loadMoreBtn.addEventListener("click", () => {
+    const nextItems = allItemsData.slice(currentIndex, currentIndex + itemsPerPage);
+    nextItems.forEach(data => {
+        const div = document.createElement("div");
+        div.classList.add("music-item");
+        div.innerHTML = `<h3 class="title">${data.title}</h3><p class="artist">${data.artist}</p>`;
+        musicContainer.appendChild(div);
+    });
+    currentIndex += itemsPerPage;
+    filterItems(); // keep search active on new items
 });
 
+// Search function
+function filterItems() {
+    const query = searchInput.value.toLowerCase();
+    const musicItems = document.querySelectorAll(".music-item");
+
+    musicItems.forEach(item => {
+        const title = item.querySelector(".title").innerText.toLowerCase();
+        const artist = item.querySelector(".artist").innerText.toLowerCase();
+
+        if (title.includes(query) || artist.includes(query)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
 }
+
+// Event listener for search
+searchInput.addEventListener("input", filterItems);
 </script>
     
 
