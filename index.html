@@ -24,7 +24,7 @@
 
 </head>
 <body>
-    <input type="text" id="search" placeholder="Search music..." onkeyup="searchSongs()">
+
 
 <div id="results"></div>
 
@@ -172,45 +172,65 @@
 const musicContainer = document.getElementById("music-container");
 const loadMoreBtn = document.getElementById("load-more");
 
-// Select all songs
-const allSongs = Array.from(document.querySelectorAll(".song"));
-let visibleCount = 5; // initial visible items
+// Your songs data
+const allSongs = [
+  { title: "Song 1", artist: "Artist A" },
+  { title: "Song 2", artist: "Artist B" },
+  { title: "Song 3", artist: "Artist C" },
+  { title: "Song 4", artist: "Artist D" },
+  { title: "Song 5", artist: "Artist E" },
+  { title: "Song 6", artist: "Artist F" },
+  { title: "Song 7", artist: "Artist G" },
+  { title: "Song 8", artist: "Artist H" },
+  { title: "Song 9", artist: "Artist I" },
+  { title: "Song 10", artist: "Artist J" }
+];
 
-// Display function handles both search and load more
-function displaySongs() {
-  const query = searchInput.value.toLowerCase();
-  let count = 0;
+let displayedCount = 0;
+const batchSize = 5;
+let currentList = allSongs; // Current list being displayed (filtered or full)
 
-  allSongs.forEach(song => {
-    const matches = song.textContent.toLowerCase().includes(query);
-    if (matches && count < visibleCount) {
-      song.style.display = "block";
-      count++;
-    } else {
-      song.style.display = "none";
-    }
+// Function to load next batch of songs
+function loadNextBatch() {
+  const nextBatch = currentList.slice(displayedCount, displayedCount + batchSize);
+  nextBatch.forEach(song => {
+    const div = document.createElement("div");
+    div.className = "music-item";
+    div.textContent = `${song.title} - ${song.artist}`;
+    musicContainer.appendChild(div);
   });
 
-  // Hide load more button if all matches are visible
-  const totalMatches = allSongs.filter(song => song.textContent.toLowerCase().includes(query)).length;
-  loadMoreBtn.style.display = (count < totalMatches) ? "block" : "none";
+  displayedCount += nextBatch.length;
+
+  // Hide Load More if all songs are displayed
+  loadMoreBtn.style.display = displayedCount >= currentList.length ? "none" : "block";
 }
 
-// Load more functionality
+// Initial load
+loadNextBatch();
+
+// Load More button click
 loadMoreBtn.addEventListener("click", () => {
-  visibleCount += 5; // show 5 more items
-  displaySongs();
+  loadNextBatch();
 });
 
-// Search functionality
+// Search input
 searchInput.addEventListener("input", () => {
-  visibleCount = 5; // reset visible items on new search
-  displaySongs();
-});
+  const query = searchInput.value.toLowerCase();
 
-// Initial display
-displaySongs();
-    </script>
+  // Filter songs
+  currentList = allSongs.filter(song =>
+    song.title.toLowerCase().includes(query) ||
+    song.artist.toLowerCase().includes(query)
+  );
+
+  // Reset display
+  displayedCount = 0;
+  musicContainer.innerHTML = "";
+
+  loadNextBatch();
+});
+</script>
 
 </body>
 </html>
