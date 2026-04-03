@@ -211,16 +211,16 @@ audio: "music/Gibo-Blayze-Ndatopa-IneProd.Tingset.mp3"
 ];
 
 
-function searchSongs(){
+function searchmusic-item(){
 
 let input = document.getElementById("search").value.toLowerCase();
 let results = document.getElementById("results");
 
 results.innerHTML="";
 
-songs.forEach(song=>{
+music-item.forEach(music-item=>{
 
-if(song.title.toLowerCase().includes(input) || music-item.artist.toLowerCase().includes(input)){
+if(music-item.title.toLowerCase().includes(input) || music-item.artist.toLowerCase().includes(input)){
 
 results.innerHTML += `
 
