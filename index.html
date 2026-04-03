@@ -160,56 +160,64 @@
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="#home">Developer Gibo Blayze</a></p>
-    <script>
-const searchInput = document.getElementById("search");
-const musicContainer = document.getElementById("music-container");
-const loadMoreBtn = document.getElementById("load-more");
 
-// Example items (replace with your real data or load dynamically)
-const allItemsData = [
-  { title: "Song Name 1", artist: "Artist 1" },
-  { title: "Song Name 2", artist: "Artist 2" },
-  { title: "Song Name 3", artist: "Artist 3" },
-  { title: "Song Name 4", artist: "Artist 4" },
-  { title: "Song Name 5", artist: "Artist 5" },
-  { title: "Song Name 6", artist: "Artist 6" },
+
+<script>
+const allSongs = [
+  { title: "Song 1", artist: "Artist A" },
+  { title: "Song 2", artist: "Artist B" },
+  { title: "Song 3", artist: "Artist C" },
+  { title: "Song 4", artist: "Artist D" },
+  { title: "Song 5", artist: "Artist E" },
+  { title: "Song 6", artist: "Artist F" },
+  { title: "Song 7", artist: "Artist G" },
+  { title: "Song 8", artist: "Artist H" },
+  { title: "Song 9", artist: "Artist I" },
+  { title: "Song 10", artist: "Artist J" }
 ];
 
-let itemsPerPage = 2;
-let currentIndex = 2; // first 2 already in HTML
+let currentIndex = 0;
+const itemsPerLoad = 5;
+let filteredSongs = [...allSongs]; // For search filter
 
-// Load More function
-loadMoreBtn.addEventListener("click", () => {
-    const nextItems = allItemsData.slice(currentIndex, currentIndex + itemsPerPage);
-    nextItems.forEach(data => {
-        const div = document.createElement("div");
-        div.classList.add("music-item");
-        div.innerHTML = `<h3 class="title">${data.title}</h3><p class="artist">${data.artist}</p>`;
-        musicContainer.appendChild(div);
-    });
-    currentIndex += itemsPerPage;
-    filterItems(); // keep search active on new items
-});
+const musicContainer = document.getElementById("music-container");
+const loadMoreBtn = document.getElementById("load-more");
+const searchInput = document.getElementById("search");
 
-// Search function
-function filterItems() {
-    const query = searchInput.value.toLowerCase();
-    const musicItems = document.querySelectorAll(".music-item");
+// Function to render songs
+function renderSongs() {
+  musicContainer.innerHTML = '';
+  const songsToShow = filteredSongs.slice(0, currentIndex);
+  songsToShow.forEach(song => {
+    const div = document.createElement('div');
+    div.className = 'music-item';
+    div.textContent = `${song.title} - ${song.artist}`;
+    musicContainer.appendChild(div);
+  });
 
-    musicItems.forEach(item => {
-        const title = item.querySelector(".title").innerText.toLowerCase();
-        const artist = item.querySelector(".artist").innerText.toLowerCase();
-
-        if (title.includes(query) || artist.includes(query)) {
-            item.style.display = "block";
-        } else {
-            item.style.display = "none";
-        }
-    });
+  // Hide Load More if all items are shown
+  loadMoreBtn.style.display = currentIndex >= filteredSongs.length ? 'none' : 'block';
 }
 
-// Event listener for search
-searchInput.addEventListener("input", filterItems);
+// Load more button click
+loadMoreBtn.addEventListener('click', () => {
+  currentIndex += itemsPerLoad;
+  renderSongs();
+});
+
+// Search input
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase();
+  filteredSongs = allSongs.filter(song => 
+    song.title.toLowerCase().includes(query) || song.artist.toLowerCase().includes(query)
+  );
+  currentIndex = itemsPerLoad; // Reset to first page of filtered results
+  renderSongs();
+});
+
+// Initial render
+currentIndex = itemsPerLoad;
+renderSongs();
 </script>
     
 
