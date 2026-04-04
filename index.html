@@ -26,6 +26,10 @@
 <body>
 <input type="text" id="search" placeholder="Search music...">
 
+<div id="music-container"></div>
+
+<button id="load-more">Load More</button>
+
 
 
 
@@ -41,12 +45,12 @@
     </div>
 <br><br><br>
     <div id="music-container">
-<div id="song">
+<div id="music-container">
 <h2>NEW MUSIC</h2>
 
 <h4>Best Gibo Blayze upload music around Vibe All Time Great choice</h4>
 <br><br>
-    <div class="song">
+    <div class="music-container">
         <h3>RB</h3>
         <img src="https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774906923/cld-sample.jpg" width="200">
         <audio controls>
@@ -56,7 +60,7 @@
         <br>
         <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/v1775157487/_FREE__R_B_Dancehall_Type_Beat_x_Afro_R_B_Type_Beat__Trauma__Afroswing_Instrumental_256k_psburg.mp3" download>Download</a>
     </div>
-    <div class="music-item">
+    <div class="music-container">
         <h3>best</h3>
         <img src="https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774906923/cld-sample.jpg" width="200">
         <audio controls>
@@ -75,7 +79,7 @@
         <br>
         <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/v1775068040/Positive_Yute___Matamando_1_fisrcx.mp3" download>Download</a>
     </div>             
-<div class="song">
+<div class="music-container">
   <h3>Gibo-Blayze-Yankha Phone</h3>
   <img src="images/basi (1).jpg" width="200"><br>
                                         
@@ -85,7 +89,7 @@
   <a href="music/Gibo-Blayze-Yankha-PhoneProd.Tingset.mp3" download >Download</a>
 </div>
 </div>
-    <div class"song">
+    <div class"music-container">
         <img src="https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774973937/fast_fast_zqxl9x.jpg" width="200">
         <h3>migoz</h3>
     <audio controls>
@@ -94,7 +98,7 @@
     <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/v1775062438/MIGOZ_REMIX_0_clqstz.mp3?" download>Download</a>
     </div>
     
-    <div class="song">
+    <div class="music-container">
         <img src="https://res.cloudinary.com/dvvjrd7ax/image/upload/fast_fast_zqxl9x.jpg" width="200">
         <h3>Be strong</h3>
         <audio controls>
@@ -111,7 +115,7 @@
 
 <h4>best music vibe all the time</h4>
 <br><br>
-    <div id="song">
+    <div id="music-container">
 <div class="music-item">
 <h3>Gibo-Blayze-Why Me</h3>
 <img src="images/basi (1).jpg"  width="200"><br>
@@ -121,7 +125,7 @@
 <a href="music/Blayze-Why-Meprod.mp3" download>Download</a>
 </div>
 </div>
-<div class="song">
+<div class="music-container">
     <img src="https://res.cloudinary.com/dvvjrd7ax/image/upload/fast_fast_zqxl9x.jpg" width="200">
     <h3>migoz</h3>
     <audio controls>
@@ -171,67 +175,61 @@
 <a href="#home">Developer Gibo Blayze</a></p>
     <script>
     const searchInput = document.getElementById("search");
-const container = document.getElementById("music-container");
+const musicContainer = document.getElementById("music-container");
 const loadMoreBtn = document.getElementById("load-more");
 
-let visible = 5;
-
-// 👉 Your music database
-const songsData = [
-  { title: "Song 1", artist: "Artist 1" },
-  { title: "Song 2", artist: "Artist 2" },
-  { title: "Song 3", artist: "Artist 3" },
-  { title: "Song 4", artist: "Artist 4" },
-  { title: "Song 5", artist: "Artist 5" },
-  { title: "Song 6", artist: "Artist 6" },
-  { title: "Song 7", artist: "Artist 7" }
+const songs = [
+  "Song 1 - Artist",
+  "Song 2 - Artist",
+  "Song 3 - Artist",
+  "Song 4 - Artist",
+  "Song 5 - Artist",
+  "Song 6 - Artist",
+  "Song 7 - Artist",
+  "Song 8 - Artist",
+  "Song 9 - Artist",
+  "Song 10 - Artist"
 ];
 
-// 👉 Display songs
-function displaySongs(data) {
-  container.innerHTML = "";
+let visibleCount = 5;
+let filteredSongs = [...songs];
 
-  data.forEach(song => {
-    container.innerHTML += `
-      <div class="song">
-        ${song.title} - ${song.artist}
-      </div>
-    `;
+// DISPLAY FUNCTION (important)
+function displaySongs() {
+  musicContainer.innerHTML = "";
+
+  filteredSongs.slice(0, visibleCount).forEach(song => {
+    const div = document.createElement("div");
+    div.className = "song";
+    div.textContent = song;
+    musicContainer.appendChild(div);
   });
+
+  // Hide button if no more songs
+  loadMoreBtn.style.display =
+    visibleCount >= filteredSongs.length ? "none" : "block";
 }
 
-// 👉 Load More (normal mode)
-function loadMore() {
-  let sliced = songsData.slice(0, visible);
-  displaySongs(sliced);
-}
+// SEARCH
+searchInput.addEventListener("input", () => {
+  const value = searchInput.value.toLowerCase();
 
+  filteredSongs = songs.filter(song =>
+    song.toLowerCase().includes(value)
+  );
+
+  visibleCount = 5; // reset
+  displaySongs();
+});
+
+// LOAD MORE
 loadMoreBtn.addEventListener("click", () => {
-  visible += 5;
-  loadMore();
+  visibleCount += 5;
+  displaySongs();
 });
 
-// 👉 SEARCH (clean & independent)
-searchInput.addEventListener("keyup", function () {
-  let value = this.value.toLowerCase();
-
-  if (value === "") {
-    visible = 5;
-    loadMore();
-    loadMoreBtn.style.display = "block";
-  } else {
-    let filtered = songsData.filter(song =>
-      song.title.toLowerCase().includes(value) ||
-      song.artist.toLowerCase().includes(value)
-    );
-
-    displaySongs(filtered);
-    loadMoreBtn.style.display = "none";
-  }
-});
-
-// 👉 Initial load
-loadMore();
+// FIRST LOAD
+displaySongs();
     </script>
         
 </body>
