@@ -59,4 +59,35 @@ nav a:hover{
   width:8px;
   font-size:16px;
 }
+section {
+  padding: 30px 15px;
+}#search {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 8px;
+  border: none;
+}
+.song {
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+}
+#load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+}
+nav {
+  position: fixed;
+  bottom: 0; /* or top: 0 if you want */
+  width: 100%;
+  z-index: 1000;
+}
+body {
+  padding-bottom: 60px; /* space so content is not hidden */
+}
 
