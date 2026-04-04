@@ -39,7 +39,7 @@ body{
 }
 nav{
   position:fixed;
-  top:2;
+  top:0;
   background-color: green;
   align-items: center;
   z-index:1000;
@@ -69,25 +69,5 @@ section {
   display: block;
   border-radius: 8px;
   border: none;
-}
-.song {
-  text-align: center;
-  padding: 10px;
-  color: white;
-  font-size: 16px;
-}
-#load-more {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-}
-nav {
-  position: fixed;
-  bottom: 0; /* or top: 0 if you want */
-  width: 100%;
-  z-index: 1000;
-}
-body {
-  padding-bottom: 60px; /* space so content is not hidden */
 }
 
