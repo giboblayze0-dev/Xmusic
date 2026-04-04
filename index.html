@@ -24,11 +24,7 @@
 
 </head>
 <body>
-<input type="text" id="search" placeholder="Search music...">
-
-<div id="music-container"></div>
-
-<button id="load-more">Load More</button>
+<inpu
 
 
 
@@ -173,64 +169,7 @@
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="#home">Developer Gibo Blayze</a></p>
-    <script>
-    const searchInput = document.getElementById("search");
-const musicContainer = document.getElementById("music-container");
-const loadMoreBtn = document.getElementById("load-more");
-
-const songs = [
-  "Song 1 - Artist",
-  "Song 2 - Artist",
-  "Song 3 - Artist",
-  "Song 4 - Artist",
-  "Song 5 - Artist",
-  "Song 6 - Artist",
-  "Song 7 - Artist",
-  "Song 8 - Artist",
-  "Song 9 - Artist",
-  "Song 10 - Artist"
-];
-
-let visibleCount = 5;
-let filteredSongs = [...songs];
-
-// DISPLAY FUNCTION (important)
-function displaySongs() {
-  musicContainer.innerHTML = "";
-
-  filteredSongs.slice(0, visibleCount).forEach(song => {
-    const div = document.createElement("div");
-    div.className = "song";
-    div.textContent = song;
-    musicContainer.appendChild(div);
-  });
-
-  // Hide button if no more songs
-  loadMoreBtn.style.display =
-    visibleCount >= filteredSongs.length ? "none" : "block";
-}
-
-// SEARCH
-searchInput.addEventListener("input", () => {
-  const value = searchInput.value.toLowerCase();
-
-  filteredSongs = songs.filter(song =>
-    song.toLowerCase().includes(value)
-  );
-
-  visibleCount = 5; // reset
-  displaySongs();
-});
-
-// LOAD MORE
-loadMoreBtn.addEventListener("click", () => {
-  visibleCount += 5;
-  displaySongs();
-});
-
-// FIRST LOAD
-displaySongs();
-    </script>
+    
         
 </body>
 </html>
