@@ -40,6 +40,12 @@
   <a href="#album">ALBUM</a>
   <a href="#videos">VIDEOS</a>
 </nav>
+    <input type="text" id="search" placeholder="Search songs, artists, albums..." style="width:100%; padding:10px; margin-bottom:10px;">
+<div id="music-container"></div>
+<button id="load-more" style="padding:10px 20px; margin-top:10px;">Load More</button>
+
+<!-- Fuse.js for search -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
     <div class="home">
         <h2>HOME</h2>
     </div>
@@ -176,42 +182,80 @@
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="#home">Developer Gibo Blayze</a></p>
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("search");
-  const loadMoreBtn = document.getElementById("load-more");
-  const items = Array.from(document.querySelectorAll(".song"));
+    // --- CONFIG ---
+const itemsPerPage = 10; // songs per batch
+let currentIndex = 0;
+let allSongs = []; // store loaded songs
+let currentChunk = 1; // start with first chunk
 
-  let visibleCount = 5; // Show 5 songs initially
+const container = document.getElementById("music-container");
+const searchInput = document.getElementById("search");
+const loadMoreBtn = document.getElementById("load-more");
 
-  function showItems(count) {
-    items.forEach((item, index) => {
-      item.style.display = index < count ? "block" : "none";
-    });
-    loadMoreBtn.style.display = count >= items.length ? "none" : "block";
+// --- LOAD SONG CHUNK ---
+async function loadSongsChunk(chunkNumber = 1) {
+  try {
+    const response = await fetch(`songs-${chunkNumber}.json`); // chunked JSON files
+    if (!response.ok) return false; // no more chunks
+    const data = await response.json();
+    allSongs = allSongs.concat(data);
+    displayNextBatch();
+    return true;
+  } catch (err) {
+    console.error("Error loading songs chunk:", err);
+    return false;
   }
+}
 
-  // Initial display
-  showItems(visibleCount);
-
-  // Load More functionality
-  loadMoreBtn.addEventListener("click", () => {
-    visibleCount += 5; // Load 5 more songs
-    showItems(visibleCount);
+// --- DISPLAY NEXT BATCH ---
+function displayNextBatch() {
+  const nextBatch = allSongs.slice(currentIndex, currentIndex + itemsPerPage);
+  nextBatch.forEach(song => {
+    container.innerHTML += `<div class="song-item">${song.title} - ${song.artist}</div>`;
   });
+  currentIndex += itemsPerPage;
+}
 
-  // Search functionality
-  searchInput.addEventListener("input", () => {
-    const filter = searchInput.value.toLowerCase();
+// --- INITIAL LOAD ---
+loadSongsChunk(currentChunk);
 
-    if (filter) {
-      items.forEach((item) => {
-        item.style.display = item.textContent.toLowerCase().includes(filter) ? "block" : "none";
-      });
-      loadMoreBtn.style.display = "none"; // Hide Load More while searching
-    } else {
-      showItems(visibleCount); // Resume normal display when search cleared
+// --- LOAD MORE BUTTON ---
+loadMoreBtn.addEventListener("click", async () => {
+  if (currentIndex >= allSongs.length) {
+    currentChunk++;
+    const loaded = await loadSongsChunk(currentChunk);
+    if (!loaded) {
+      loadMoreBtn.disabled = true;
+      loadMoreBtn.innerText = "No more songs";
     }
+  } else {
+    displayNextBatch();
+  }
+});
+
+// --- FUSE.JS SEARCH ---
+let fuse = null;
+
+function initFuse() {
+  fuse = new Fuse(allSongs, {
+    keys: ["title", "artist", "album"],
+    threshold: 0.3,
   });
+}
+
+searchInput.addEventListener("input", (e) => {
+  if (!fuse) initFuse();
+  const query = e.target.value;
+  container.innerHTML = "";
+  if (query.trim() === "") {
+    currentIndex = 0;
+    displayNextBatch();
+  } else {
+    const results = fuse.search(query).map(r => r.item);
+    results.slice(0, itemsPerPage).forEach(song => {
+      container.innerHTML += `<div class="song-item">${song.title} - ${song.artist}</div>`;
+    });
+  }
 });
       </script>         
         
