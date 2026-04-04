@@ -1,70 +1,41 @@
-// For all sections
-document.querySelectorAll('.music-section').forEach(section => {
-  const container = section.querySelector('.music-container');
-  const loadMoreBtn = section.querySelector('.load-more');
-
-  let itemsToShow = 5; // initial number
-  const allItems = Array.from(container.children);
-
-  // hide extra items initially
-  allItems.forEach((item, i) => {
-    if (i >= itemsToShow) item.style.display = 'none';
-  });
-
-  loadMoreBtn.addEventListener('click', () => {
-    const hiddenItems = allItems.filter(item => item.style.display === 'none');
-    hiddenItems.slice(0, 5).forEach(item => item.style.display = 'block');
-
-    // hide button if no more items
-    if (allItems.every(item => item.style.display === 'block')) {
-      loadMoreBtn.style.display = 'none';
-    }
-  });
-});
-// main.js
-
-// Search Input
 const searchInput = document.getElementById("search");
+const musicContainer = document.getElementById("music-container");
+const loadMoreBtn = document.getElementById("load-more");
 
-// Handle all music sections independently
-document.querySelectorAll('.music-section').forEach(section => {
-  const container = section.querySelector('.music-container');
-  const loadMoreBtn = section.querySelector('.load-more');
-  const allItems = Array.from(container.querySelectorAll('.music-item'));
+// Grab all your song items
+const allSongs = Array.from(document.querySelectorAll(".song"));
+let visibleCount = 5; // show first 5 songs
 
-  let itemsToShow = 5;
-
-  // Initial hide extra items
-  allItems.forEach((item, i) => {
-    if (i >= itemsToShow) item.style.display = 'none';
+// Function to display songs
+function displaySongs(filteredSongs) {
+  musicContainer.innerHTML = ""; // clear container
+  filteredSongs.slice(0, visibleCount).forEach(song => {
+    musicContainer.appendChild(song);
   });
 
-  // Load More Button
-  loadMoreBtn.addEventListener('click', () => {
-    const hiddenItems = allItems.filter(item => item.style.display === 'none');
-    hiddenItems.slice(0, 5).forEach(item => item.style.display = 'block');
+  // Show or hide Load More
+  loadMoreBtn.style.display = visibleCount < filteredSongs.length ? "block" : "none";
+}
 
-    if (allItems.every(item => item.style.display === 'block')) {
-      loadMoreBtn.style.display = 'none';
-    }
-  });
+// Get songs matching search
+function getFilteredSongs() {
+  const query = searchInput.value.toLowerCase().trim();
+  return allSongs.filter(song => song.textContent.toLowerCase().includes(query));
+}
 
-  // Search
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase();
-
-    allItems.forEach(item => {
-      const title = item.dataset.title.toLowerCase();
-      const artist = item.dataset.artist.toLowerCase();
-
-      if (title.includes(query) || artist.includes(query)) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-
-    // Optionally hide Load More when searching
-    loadMoreBtn.style.display = query === '' ? 'block' : 'none';
-  });
+// Search input event
+searchInput.addEventListener("input", () => {
+  visibleCount = 5; // reset visible count
+  const filteredSongs = getFilteredSongs();
+  displaySongs(filteredSongs);
 });
+
+// Load More click
+loadMoreBtn.addEventListener("click", () => {
+  visibleCount += 5; // show 5 more
+  const filteredSongs = getFilteredSongs();
+  displaySongs(filteredSongs);
+});
+
+// Initial display
+displaySongs(allSongs);
