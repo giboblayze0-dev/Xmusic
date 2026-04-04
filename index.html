@@ -174,7 +174,28 @@
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="#home">Developer Gibo Blayze</a></p>
-    
+    <script>
+    const loadMoreBtn = document.getElementById("load-more");
+const songs = Array.from(document.querySelectorAll(".song"));
+let itemsToShow = 5;
+
+// Show initial 5 songs
+songs.forEach((song, index) => {
+  song.style.display = index < itemsToShow ? "block" : "none";
+});
+
+// Load More click
+loadMoreBtn.addEventListener("click", () => {
+  itemsToShow += 5;
+  songs.forEach((song, index) => {
+    if(index < itemsToShow) song.style.display = "block";
+  });
+
+  if(itemsToShow >= songs.length) {
+    loadMoreBtn.style.display = "none"; // hide button when all shown
+  }
+});
+    </script>
         
 </body>
 </html>
