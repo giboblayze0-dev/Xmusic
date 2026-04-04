@@ -1,41 +1,62 @@
-const searchInput = document.getElementById("search");
-const musicContainer = document.getElementById("music-container");
-const loadMoreBtn = document.getElementById("load-more");
+const songs = [
 
-// Grab all your song items
-const allSongs = Array.from(document.querySelectorAll(".song"));
-let visibleCount = 5; // show first 5 songs
+{
+title: "Reggae Vibes",
+artist: "Gibo Blayze",
+image: "images/reggae.jpg",
+audio: "music/reggae.mp3"
+},
 
-// Function to display songs
-function displaySongs(filteredSongs) {
-  musicContainer.innerHTML = ""; // clear container
-  filteredSongs.slice(0, visibleCount).forEach(song => {
-    musicContainer.appendChild(song);
-  });
+{
+title: "Dancehall Fire",
+artist: "DJ Star",
+image: "images/dancehall.jpg",
+audio: "music/dancehall.mp3"
+},
 
-  // Show or hide Load More
-  loadMoreBtn.style.display = visibleCount < filteredSongs.length ? "block" : "none";
+{
+title: "Island Love",
+artist: "King Melody",
+image: "images/island.jpg",
+audio: "music/island.mp3"
 }
 
-// Get songs matching search
-function getFilteredSongs() {
-  const query = searchInput.value.toLowerCase().trim();
-  return allSongs.filter(song => song.textContent.toLowerCase().includes(query));
+];
+
+
+function searchSongs(){
+
+let input = document.getElementById("search").value.toLowerCase();
+let results = document.getElementById("results");
+
+results.innerHTML="";
+
+songs.forEach(song=>{
+
+if(song.title.toLowerCase().includes(input) || song.artist.toLowerCase().includes(input)){
+
+results.innerHTML += `
+
+<div class="song">
+
+<img src="${song.image}" width="120">
+
+<h3>${song.title}</h3>
+
+<p>${song.artist}</p>
+
+<audio controls src="${song.audio}"></audio>
+
+<br>
+
+<a href="${song.audio}" download>Download</a>
+
+</div>
+
+`;
+
 }
 
-// Search input event
-searchInput.addEventListener("input", () => {
-  visibleCount = 5; // reset visible count
-  const filteredSongs = getFilteredSongs();
-  displaySongs(filteredSongs);
 });
 
-// Load More click
-loadMoreBtn.addEventListener("click", () => {
-  visibleCount += 5; // show 5 more
-  const filteredSongs = getFilteredSongs();
-  displaySongs(filteredSongs);
-});
-
-// Initial display
-displaySongs(allSongs);
+}
