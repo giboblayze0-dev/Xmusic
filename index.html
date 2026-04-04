@@ -24,13 +24,11 @@
 
 </head>
 <body>
-<input type="text" id="search" placeholder="Search songs..." style="width: 100%; padding: 10px; margin-bottom: 10px;">
-<div id="music-container"></div>
-<button id="load-more" style="padding: 10px 20px; margin-top: 10px;">Load More</button>
+<input type="text" id="search" placeholder="Search music...">
 
-<div id="results"></div>
 
-<script src="search.js"></script>
+
+
 <nav>
   <a href="#home">Home</a>
   <a href="#new-music">NEW-MUSIC</a>
@@ -68,7 +66,7 @@
         <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/v1775157533/FREE__Ruger_x_Victony_x_Omah_lay_Type_Beat_Attention__Afrobeat_Instrumental_2023_128k_abvmez.mp3" download>Download</a>
     </div>
             
-    <div class="music-item"
+    <div class="music-container"
         <h3>Matamando</h3>
         <img src="https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774906923/cld-sample-3.jpg" width="200">
         <audio controls>
@@ -77,7 +75,7 @@
         <br>
         <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/v1775068040/Positive_Yute___Matamando_1_fisrcx.mp3" download>Download</a>
     </div>             
-<div class="music-item">
+<div class="music-container">
   <h3>Gibo-Blayze-Yankha Phone</h3>
   <img src="images/basi (1).jpg" width="200"><br>
                                         
@@ -87,7 +85,7 @@
   <a href="music/Gibo-Blayze-Yankha-PhoneProd.Tingset.mp3" download >Download</a>
 </div>
 </div>
-    <div class"music-item">
+    <div class"music-container">
         <img src="https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774973937/fast_fast_zqxl9x.jpg" width="200">
         <h3>migoz</h3>
     <audio controls>
@@ -96,7 +94,7 @@
     <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/v1775062438/MIGOZ_REMIX_0_clqstz.mp3?" download>Download</a>
     </div>
     
-    <div class="music-item">
+    <div class="music-container">
         <img src="https://res.cloudinary.com/dvvjrd7ax/image/upload/fast_fast_zqxl9x.jpg" width="200">
         <h3>Be strong</h3>
         <audio controls>
@@ -105,7 +103,7 @@
         <a href="https://res.cloudinary.com/dvvjrd7ax/video/upload/fl_attachment/Taycee-Be-StrongProd.Taycee_rnudv4.mp3" download>Download</a>
     </div>
     </div>
-    <button id="loadMore">Load More</button>
+    <button id="load-More">Load More</button>
 <br><br><br>
 <div id="trending-music">
 <h2>TRENDING MUSIC</h2>
@@ -123,7 +121,7 @@
 <a href="music/Blayze-Why-Meprod.mp3" download>Download</a>
 </div>
 </div>
-<div class="music-item">
+<div class="music-container">
     <img src="https://res.cloudinary.com/dvvjrd7ax/image/upload/fast_fast_zqxl9x.jpg" width="200">
     <h3>migoz</h3>
     <audio controls>
@@ -134,7 +132,7 @@
         download>Download</a>
 </div>
 </div>
-    <button id="loadMore">Load More</button>
+    <button id="load-More">Load More</button>
 
 <br><br><br>
     
@@ -155,7 +153,7 @@
 </div>
 </div>
 </div>
-    <button id="loadMore">Load More</button>
+    <button id="load-More">Load More</button>
 
 <br><br><br>
 <div id="videos">
@@ -171,68 +169,68 @@
 <a href="#home">Developer Gibo Blayze</a></p>
     <script>
     const searchInput = document.getElementById("search");
-const musicContainer = document.getElementById("music-container");
+const container = document.getElementById("music-container");
 const loadMoreBtn = document.getElementById("load-more");
 
-// Your songs data
-const allSongs = [
-  { title: "Song 1", artist: "Artist A" },
-  { title: "Song 2", artist: "Artist B" },
-  { title: "Song 3", artist: "Artist C" },
-  { title: "Song 4", artist: "Artist D" },
-  { title: "Song 5", artist: "Artist E" },
-  { title: "Song 6", artist: "Artist F" },
-  { title: "Song 7", artist: "Artist G" },
-  { title: "Song 8", artist: "Artist H" },
-  { title: "Song 9", artist: "Artist I" },
-  { title: "Song 10", artist: "Artist J" }
+let visible = 5;
+
+// 👉 Your music database
+const songsData = [
+  { title: "Song 1", artist: "Artist 1" },
+  { title: "Song 2", artist: "Artist 2" },
+  { title: "Song 3", artist: "Artist 3" },
+  { title: "Song 4", artist: "Artist 4" },
+  { title: "Song 5", artist: "Artist 5" },
+  { title: "Song 6", artist: "Artist 6" },
+  { title: "Song 7", artist: "Artist 7" }
 ];
 
-let displayedCount = 0;
-const batchSize = 5;
-let currentList = allSongs; // Current list being displayed (filtered or full)
+// 👉 Display songs
+function displaySongs(data) {
+  container.innerHTML = "";
 
-// Function to load next batch of songs
-function loadNextBatch() {
-  const nextBatch = currentList.slice(displayedCount, displayedCount + batchSize);
-  nextBatch.forEach(song => {
-    const div = document.createElement("div");
-    div.className = "music-item";
-    div.textContent = `${song.title} - ${song.artist}`;
-    musicContainer.appendChild(div);
+  data.forEach(song => {
+    container.innerHTML += `
+      <div class="song">
+        ${song.title} - ${song.artist}
+      </div>
+    `;
   });
-
-  displayedCount += nextBatch.length;
-
-  // Hide Load More if all songs are displayed
-  loadMoreBtn.style.display = displayedCount >= currentList.length ? "none" : "block";
 }
 
-// Initial load
-loadNextBatch();
+// 👉 Load More (normal mode)
+function loadMore() {
+  let sliced = songsData.slice(0, visible);
+  displaySongs(sliced);
+}
 
-// Load More button click
 loadMoreBtn.addEventListener("click", () => {
-  loadNextBatch();
+  visible += 5;
+  loadMore();
 });
 
-// Search input
-searchInput.addEventListener("input", () => {
-  const query = searchInput.value.toLowerCase();
+// 👉 SEARCH (clean & independent)
+searchInput.addEventListener("keyup", function () {
+  let value = this.value.toLowerCase();
 
-  // Filter songs
-  currentList = allSongs.filter(song =>
-    song.title.toLowerCase().includes(query) ||
-    song.artist.toLowerCase().includes(query)
-  );
+  if (value === "") {
+    visible = 5;
+    loadMore();
+    loadMoreBtn.style.display = "block";
+  } else {
+    let filtered = songsData.filter(song =>
+      song.title.toLowerCase().includes(value) ||
+      song.artist.toLowerCase().includes(value)
+    );
 
-  // Reset display
-  displayedCount = 0;
-  musicContainer.innerHTML = "";
-
-  loadNextBatch();
+    displaySongs(filtered);
+    loadMoreBtn.style.display = "none";
+  }
 });
-</script>
 
+// 👉 Initial load
+loadMore();
+    </script>
+        
 </body>
 </html>
