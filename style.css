@@ -53,6 +53,7 @@ nav a:hover{
   color: yellow;
 }
 .search-box{
+  position: fixed;
   display:block;
   margin:5px auto;
   padding:8px;
@@ -70,4 +71,3 @@ section {
   border-radius: 8px;
   border: none;
 }
-
