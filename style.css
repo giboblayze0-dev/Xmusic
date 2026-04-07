@@ -39,7 +39,7 @@ body{
 }
 nav{
   position:fixed;
-  top:0;
+  top:2;
   background-color: green;
   align-items: center;
   z-index:1000;
