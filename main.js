@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 const songsData = [
-  { title: "Be Strong", artist: "Taycee", section: newmusic },
-  { title: "Ye", artist: "Burna Boy", section: newmusic },
-  { title: "Essence", artist: "Wizkid", section: newmusic },
-  { title: "Fall", artist: "Davido", section: newmusic },
-  { title: "Free Mind", artist: "Tems", section: newmusic },
-  { title: "Calm Down", artist: "Rema", section: newmusic },
+  { title: "Be Strong", artist: "Taycee", section: new-music },
+  { title: "Ye", artist: "Burna Boy", section: new-music },
+  { title: "Essence", artist: "Wizkid", section: new-music },
+  { title: "Fall", artist: "Davido", section: new-music },
+  { title: "Free Mind", artist: "Tems", section: new-music },
+  { title: "Calm Down", artist: "Rema", section: new-music },
 
   { title: "Fever", artist: "Vybz Kartel", section: 2 },
   { title: "Lick", artist: "Shenseea", section: 2 },
@@ -33,7 +33,7 @@ const resultsContainer = document.getElementById("search-results");
 // CREATE SECTIONS
 function createSections() {
   sectionsContainer.innerHTML = "";
-  let grouped = {newmusic: [], trendingmusic: [], album: [], videos: []};
+  let grouped = {new-music: [], trending-music: [], album: [], videos: []};
   songsData.forEach(song => grouped[song.section].push(song));
 
   Object.keys(grouped).forEach(sec => {
