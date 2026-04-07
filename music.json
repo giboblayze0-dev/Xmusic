@@ -1,7 +1,7 @@
 [
-  {"title": "Matamando", "artist": "Positive-Yute", "type": "new-music", "link": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775068040/Positive_Yute___Matamando_1_fisrcx.mp3"},
-  {"title": "Taycee", "artist": "Be Strong", "type": "new-music", "link": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062443/Taycee-Be-StrongProd.Taycee_rnudv4.mp3"},
-  {"title": "Migoz", "artist": "Migoz", "type": "new-music", "link": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062438/MIGOZ_REMIX_0_clqstz.mp3"},
+  {"title": "Matamando", "artist": "Positive-Yute", "type": "new", "link": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775068040/Positive_Yute___Matamando_1_fisrcx.mp3"},
+  {"title": "Taycee", "artist": "Be Strong", "type": "new", "link": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062443/Taycee-Be-StrongProd.Taycee_rnudv4.mp3"},
+  {"title": "Migoz", "artist": "Migoz", "type": "new", "link": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062438/MIGOZ_REMIX_0_clqstz.mp3"},
   {"title": "Song 4", "artist": "Artist D", "type": "trending", "link": "song4.mp3"},
   {"title": "Album 1", "artist": "Artist E", "type": "album", "link": "album1.mp3"},
   {"title": "Video 1", "artist": "Artist F", "type": "video", "link": "video1.mp4"}
