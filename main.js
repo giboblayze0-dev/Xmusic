@@ -1,5 +1,5 @@
 const songsData = [
-  { title: "Ndatopa ine", artist: "Gibo Blayze", section: album },
+  { title: "Ndatopa ine", artist: "Gibo Blayze", section: 3},
   { title: "Ye", artist: "Burna Boy", section: 1 },
   { title: "Essence", artist: "Wizkid", section: 1 },
   { title: "Fall", artist: "Davido", section: 1 },
