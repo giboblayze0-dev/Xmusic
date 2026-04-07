@@ -178,85 +178,51 @@
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="#home">Developer Gibo Blayze</a></p>
     <script>
-    // --- CONFIG ---
-const itemsPerPage = 10; // songs per batch
-let currentIndex = 0;
-let allSongs = []; // store loaded songs
-let currentChunk = 1; // start with first chunk
+    const searchInput = document.getElementById("search");
+const sections = document.querySelectorAll(".section");
 
-const container = document.getElementById("music-container");
-const searchInput = document.getElementById("search");
-const loadMoreBtn = document.getElementById("load-more");
+// LOAD MORE FOR EACH SECTION
+sections.forEach(section => {
+  const songs = section.querySelectorAll(".song");
+  const button = section.querySelector(".load-more");
 
-// --- LOAD SONG CHUNK ---
-async function loadSongsChunk(chunkNumber = 1) {
-  try {
-    const response = await fetch(`songs-${chunkNumber}.json`); // chunked JSON files
-    if (!response.ok) return false; // no more chunks
-    const data = await response.json();
-    allSongs = allSongs.concat(data);
-    displayNextBatch();
-    return true;
-  } catch (err) {
-    console.error("Error loading songs chunk:", err);
-    return false;
-  }
-}
+  let visible = 4;
 
-// --- DISPLAY NEXT BATCH ---
-function displayNextBatch() {
-  const nextBatch = allSongs.slice(currentIndex, currentIndex + itemsPerPage);
-  nextBatch.forEach(song => {
-    container.innerHTML += `<div class="song-item">${song.title} - ${song.artist}</div>`;
-  });
-  currentIndex += itemsPerPage;
-}
-
-// --- INITIAL LOAD ---
-loadSongsChunk(currentChunk);
-
-// --- LOAD MORE BUTTON ---
-loadMoreBtn.addEventListener("click", async () => {
-  if (currentIndex >= allSongs.length) {
-    currentChunk++;
-    const loaded = await loadSongsChunk(currentChunk);
-    if (!loaded) {
-      loadMoreBtn.disabled = true;
-      loadMoreBtn.innerText = "No more songs";
+  // hide extra songs
+  songs.forEach((song, index) => {
+    if (index >= visible) {
+      song.style.display = "none";
     }
-  } else {
-    displayNextBatch();
-  }
-});
-
-// --- FUSE.JS SEARCH ---
-let fuse = null;
-
-function initFuse() {
-  fuse = new Fuse(allSongs, {
-    keys: ["title", "artist", "album"],
-    threshold: 0.3,
   });
-}
 
-searchInput.addEventListener("input", (e) => {
-  if (!fuse) initFuse();
-  const query = e.target.value;
-  container.innerHTML = "";
-  if (query.trim() === "") {
-    currentIndex = 0;
-    displayNextBatch();
-  } else {
-    const results = fuse.search(query).map(r => r.item);
-    results.slice(0, itemsPerPage).forEach(song => {
-      container.innerHTML += `<div class="song-item">${song.title} - ${song.artist}</div>`;
+  button.addEventListener("click", () => {
+    visible += 4;
+
+    songs.forEach((song, index) => {
+      if (index < visible) {
+        song.style.display = "block";
+      }
     });
-  }
+
+    if (visible >= songs.length) {
+      button.style.display = "none";
+    }
+  });
 });
-      const allSongs = [
-  { title: "Why me", artist: "Gibo Blayze", album: "Album 1" },
-  { title: "be strong", artist: "Taycee", album: "New Album" },  // add here
-];</script>         
+
+// SEARCH ENGINE (GLOBAL)
+searchInput.addEventListener("keyup", () => {
+  const value = searchInput.value.toLowerCase();
+
+  document.querySelectorAll(".song").forEach(song => {
+    if (song.textContent.toLowerCase().includes(value)) {
+      song.style.display = "block";
+    } else {
+      song.style.display = "none";
+    }
+  });
+});  
+    </script>       
         
 </body>
 </html>
