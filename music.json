@@ -1,30 +1,34 @@
 [
   {
-    "title": "Song One",
-    "artist": "Artist A",
-    "image": "img/song1.jpg",
-    "file": "songs/song1.mp3",
+    "title": "One Day",
+    "artist": "Saint",
+    "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774906909/samples/bike.jpg",
+    "file": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062451/Saint_-_One_Day_vs8jm9.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062451/Saint_-_One_Day_vs8jm9.mp3",
     "section": "new"
   },
   {
-    "title": "Song Two",
-    "artist": "Artist B",
-    "image": "img/song2.jpg",
-    "file": "songs/song2.mp3",
+    "title": "Matamando",
+    "artist": "Positive yut",
+    "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774906909/samples/bike.jpg",
+    "file": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775068040/Positive_Yute___Matamando_1_fisrcx.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775068040/Positive_Yute___Matamando_1_fisrcx.mp3",
     "section": "trending"
   },
   {
-    "title": "Song Three",
-    "artist": "Artist C",
-    "image": "img/song3.jpg",
-    "file": "songs/song3.mp3",
+    "title": "RB",
+    "artist": "ruger",
+    "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774906909/samples/bike.jpg",
+    "file": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775157487/_FREE__R_B_Dancehall_Type_Beat_x_Afro_R_B_Type_Beat__Trauma__Afroswing_Instrumental_256k_psburg.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775157487/_FREE__R_B_Dancehall_Type_Beat_x_Afro_R_B_Type_Beat__Trauma__Afroswing_Instrumental_256k_psburg.mp3",
     "section": "album"
   },
   {
-    "title": "Song Four",
-    "artist": "Artist D",
-    "image": "img/song4.jpg",
-    "file": "songs/song4.mp3",
+    "title": "okar",
+    "artist": "Ruger",
+    "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774906909/samples/bike.jpg",
+    "file": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775157533/FREE__Ruger_x_Victony_x_Omah_lay_Type_Beat_Attention__Afrobeat_Instrumental_2023_128k_abvmez.mp3",
+   "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775157533/FREE__Ruger_x_Victony_x_Omah_lay_Type_Beat_Attention__Afrobeat_Instrumental_2023_128k_abvmez.mp3",
     "section": "video"
   }
 ]
