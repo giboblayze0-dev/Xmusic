@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Song One",
+    "artist": "Artist A",
+    "image": "img/song1.jpg",
+    "file": "songs/song1.mp3",
+    "section": "new"
+  },
+  {
+    "title": "Song Two",
+    "artist": "Artist B",
+    "image": "img/song2.jpg",
+    "file": "songs/song2.mp3",
+    "section": "trending"
+  },
+  {
+    "title": "Song Three",
+    "artist": "Artist C",
+    "image": "img/song3.jpg",
+    "file": "songs/song3.mp3",
+    "section": "album"
+  },
+  {
+    "title": "Song Four",
+    "artist": "Artist D",
+    "image": "img/song4.jpg",
+    "file": "songs/song4.mp3",
+    "section": "video"
+  }
+]
