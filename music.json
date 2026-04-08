@@ -4,6 +4,7 @@
     "artist": "Saint",
     "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774906909/samples/bike.jpg",
     "file": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062451/Saint_-_One_Day_vs8jm9.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062451/Saint_-_One_Day_vs8jm9.mp3",
     "section": "new"
   },
   {
@@ -19,8 +20,8 @@
     "artist": "ruger",
     "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774906909/samples/bike.jpg",
     "file": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775157487/_FREE__R_B_Dancehall_Type_Beat_x_Afro_R_B_Type_Beat__Trauma__Afroswing_Instrumental_256k_psburg.mp3",
-  
-    "section": "album"
+  "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775157487/_FREE__R_B_Dancehall_Type_Beat_x_Afro_R_B_Type_Beat__Trauma__Afroswing_Instrumental_256k_psburg.mp3",
+  "section": "album"
   },
   {
     "title": "okar",
