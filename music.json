@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Song Name 1",
+    "artist": "Artist 1",
+    "image": "https://your-image-link.jpg",
+    "audio": "https://your-audio-link.mp3",
+    "category": "new"
+  },
+  {
+    "id": 2,
+    "title": "Song Name 2",
+    "artist": "Artist 2",
+    "image": "https://your-image-link.jpg",
+    "audio": "https://your-audio-link.mp3",
+    "category": "trending"
+  },
+  {
+    "id": 3,
+    "title": "Song Name 3",
+    "artist": "Artist 3",
+    "image": "https://your-image-link.jpg",
+    "audio": "https://your-audio-link.mp3",
+    "category": "album"
+  },
+  {
+    "id": 4,
+    "title": "Song Name 4",
+    "artist": "Artist 4",
+    "image": "https://your-image-link.jpg",
+    "audio": "https://your-audio-link.mp3",
+    "category": "video"
+  }
+]
