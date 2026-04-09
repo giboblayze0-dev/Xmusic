@@ -7,12 +7,8 @@ let displayCount = {
 };
 
 // LOAD JSON
-fetch('music.json')
-  .then(res => res.json())
-  .then(data => {
-    allSongs = data;
-    displayAll();
-  });
+fetch("data/music.json"):
+
 
 // DISPLAY ALL SECTIONS
 function displayAll() {
