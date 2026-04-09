@@ -75,3 +75,16 @@ section {
   width: 200px; /* adjust as needed */
   height: auto;
 }
+img {
+    width: 100%;    /* image takes full width of container */
+    height: auto;   /* keeps aspect ratio */
+    object-fit: cover; /* optional: fills the container without stretching */
+}
+.cover-container {
+    width: 300px;       /* set container width */
+    height: 200px;      /* set container height */
+    background-image: url('your-image.jpg');
+    background-size: cover;      /* fills container, keeps ratio */
+    background-position: center; /* centers the image */
+    background-repeat: no-repeat;
+  }
