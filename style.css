@@ -71,3 +71,7 @@ section {
   border-radius: 8px;
   border: none;
 }
+.song-cover {
+  width: 200px; /* adjust as needed */
+  height: auto;
+}
