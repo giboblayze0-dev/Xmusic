@@ -1,18 +1,18 @@
 [
   {
-    "title": "Song One",
-    "artist": "Gibo Blayze",
-    "image": "images/song1.jpg",
+    "title": "One Day",
+    "artist": "Saint",
+    "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774973937/fast_fast_zqxl9x.jpg",
     "section": "new", 
-    "audio": "https://yourlink.com/song1.mp3",
-    "download": "https://yourlink.com/song1.mp3"
+    "audio": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062451/Saint_-_One_Day_vs8jm9.mp3",
+    "download": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062451/Saint_-_One_Day_vs8jm9.mp3"
   },
   {
-    "title": "Song Two",
-    "artist": "Gibo Blayze",
-    "image": "images/song2.jpg",
+    "title": "Be strong",
+    "artist": "Taycee",
+    "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/v1774906923/cld-sample-3.jpg",
     "section": "trending",
-    "audio": "https://yourlink.com/song2.mp3",
-    "download": "https://yourlink.com/song2.mp3"
+    "audio": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062443/Taycee-Be-StrongProd.Taycee_rnudv4.mp3",
+    "download": "https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775062443/Taycee-Be-StrongProd.Taycee_rnudv4.mp3"
   }
 ]
