@@ -1,9 +1,18 @@
 [
   {
-    "title": "Test Song",
+    "title": "Song One",
     "artist": "Gibo Blayze",
-    "category": "new",
-    "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    "download": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+    "image": "images/song1.jpg",
+    "section": "new", 
+    "audio": "https://yourlink.com/song1.mp3",
+    "download": "https://yourlink.com/song1.mp3"
+  },
+  {
+    "title": "Song Two",
+    "artist": "Gibo Blayze",
+    "image": "images/song2.jpg",
+    "section": "trending",
+    "audio": "https://yourlink.com/song2.mp3",
+    "download": "https://yourlink.com/song2.mp3"
   }
 ]
