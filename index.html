@@ -29,13 +29,23 @@
     <div id="sections"></div>
       
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#new-music">NEW-MUSIC</a>
-  <a href="#trending-music">TRENDING MUSIC</a>
-  <a href="#album">ALBUM</a>
-  <a href="#videos">VIDEOS</a>
-</nav>
+<header>
+  <nav class="navbar">
+    <h2 class="logo">Xmusic</h2>
+
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">New</a></li>
+      <li><a href="#">Trending</a></li>
+      <li><a href="#">Albums</a></li>
+      <li><a href="#">Videos</a></li>
+    </ul>
+  </nav>
+</header>
 
 
 <div id="new" class="section">
@@ -69,6 +79,16 @@
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
 <a href="#home">Developer Gibo Blayze</a></p>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", function () {
+    nav.classList.toggle("active");
+  });
+});
+    </script>
     <script src="main.js"></script>       
         
 </body>
