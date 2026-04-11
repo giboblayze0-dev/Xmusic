@@ -1,11 +1,27 @@
 [
   {
-    "title":"moyo",
+    "title":"pode haver",
+    "artist":"Dj tarico-nao",
+    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/cld-sample-3.jpg",
+    "section ":"trending",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/DJ-Tarico-Nao-Pode-Haver-Criancas_gkteyb.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/DJ-Tarico-Nao-Pode-Haver-Criancas_gkteyb.mp3"
+  },
+  {
+    "title":"twenty fingers",
+    "artist":"julieta ft nelson freitas",
+    "image":"qhttps://res.cloudinary.com/dvvjrd7ax/image/upload/cld-sample-3.jpg",
+    "section ":"trending",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Twenty-Fingers-Julieta-Remix-ft-Nelson-Freitas_bort85.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Twenty-Fingers-Julieta-Remix-ft-Nelson-Freitas_bort85.mp3"
+  },
+  {
+    "title":"seven",
     "artist":"kelvin sings",
-    "image":"https://drive.google.com/uc?export=download&id=1Nd0Pbd5fSJ34iz8ziFQGm-m-hPqUwMnV/view?usp=drivesdk",
+    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/cld-sample-3.jpg",
     "section":"trending",
-    "audio":"https://drive.google.com/uc?export=download&id=1hfOO-xJABOF2PRI7Wz-gOAQNN5aP3VBR/view?usp=drivesdk",
-  "download":"https://drive.google.com/uc?export=download&id=1hfOO-xJABOF2PRI7Wz-gOAQNN5aP3VBR/view?usp=drivesdk"
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/07.Kelvin-Sings-SEVEN_hihqym.mp3",
+  "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/07.Kelvin-Sings-SEVEN_hihqym.mp3"
   },
     {
     "title": "One Day",
