@@ -1,5 +1,37 @@
 [
   {
+    "title":"Nani",
+    "artist":"Diamond Platinum",
+    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/gift_kwqexh.jpg",
+    "section":"trending",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Diamond_Platnumz_-_Nani__Official_Music_Video__48k_lvubes.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Diamond_Platnumz_-_Nani__Official_Music_Video__48k_lvubes.mp3"
+  },
+  {
+    "title":"Nitarejea",
+    "artist":'Diamond Platinum",
+    "image";"https://res.cloudinary.com/dvvjrd7ax/video/upload/MATSEBERE_-_Matsebere_Dance_Group_ft_Jolasto__Official_video_by_Mejie__48k_tka13a.mp3",
+    "section":"trending",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Diamond_Platnumz_-_Nitarejea__Official_Video__48k_k9nqao.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Diamond_Platnumz_-_Nitarejea__Official_Video__48k_k9nqao.mp3"
+  },
+  {
+    "title":"Mijie",
+    "artist":"masembere dance group ft Jolasta",
+    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/gift_kwqexh.jpg",
+    "section""trending",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/MATSEBERE_-_Matsebere_Dance_Group_ft_Jolasto__Official_video_by_Mejie__48k_tka13a.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/MATSEBERE_-_Matsebere_Dance_Group_ft_Jolasto__Official_video_by_Mejie__48k_tka13a.mp3"
+  },
+    {
+    "title":"Flavour",
+    "artist":"master- KG",
+    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/gift_kwqexh.jpg",
+    "section":"trending",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Goon_Flavour__Master_KG___Eemoh_-_Ngishutheni__Official_Music_Video__48k_qhwede.mp3",
+  },
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Goon_Flavour__Master_KG___Eemoh_-_Ngishutheni__Official_Music_Video__48k_qhwede.mp3"
+  {
     "title":"pode haver",
     "artist":"Dj tarico-nao",
     "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/cld-sample-3.jpg",
