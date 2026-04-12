@@ -99,3 +99,18 @@ document.addEventListener("play", function(e){
     }
   });
 }, true);
+
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDI7b7BqUopaBfTC-P0vE1o5PVX3ustFOw",
+  authDomain: "xmusic-eb387.firebaseapp.com",
+  projectId: "xmusic-eb387",
+  storageBucket: "xmusic-eb387.firebasestorage.app",
+  messagingSenderId: "758209934631",
+  appId: "1:758209934631:web:adab7279758b7ae2172502",
+  measurementId: "G-2S7F5P03ZD"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
