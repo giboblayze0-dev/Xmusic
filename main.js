@@ -80,3 +80,17 @@ links.forEach(link => {
     document.querySelector('.menu').classList.remove('active');
   });
 });
+
+
+document.querySelectorAll("audio").forEach(el => {
+    const src = el.getAttribute("src");
+
+    if (src && src.endsWith(".mp4")) {
+        const video = document.createElement("video");
+        video.src = src;
+        video.controls = true;
+        video.style.width = "100%";
+
+        el.replaceWith(video);
+    }
+});
