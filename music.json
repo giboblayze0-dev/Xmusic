@@ -1,5 +1,29 @@
 [
   {
+    "title":"Father",
+    "artist":"Travis-Scott",
+    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/cld-sample.jpg",
+    "section":"new",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/YE_-_FATHER__feat._TRAVIS_SCOTT__48k_dqnhsk.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/YE_-_FATHER__feat._TRAVIS_SCOTT__48k_dqnhsk.mp3"
+  },
+  {
+    "title":"sai sai",
+    "artist":"sai",
+    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/cld-sample.jpg",
+    "section":"album",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/VJ_-_Sai_Sai__Clip_Officiel__48k_fxcilf.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/VJ_-_Sai_Sai__Clip_Officiel__48k_fxcilf.mp3"
+  },
+  {
+    "title":"Maphuma",
+    "artist":"scotts ft sya-waver",
+    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/cld-sample.jpg",
+    "section":"new",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Scotts_Maphuma_-_Sya_Waver__Official_Music_Video_ft_Uncool_MC__Mluusician__DlalaRegal___ShaunStylist_48k_gzqou3.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Scotts_Maphuma_-_Sya_Waver__Official_Music_Video_ft_Uncool_MC__Mluusician__DlalaRegal___ShaunStylist_48k_gzqou3.mp3"
+  },
+  {
     "title":"City",
     "artist":"Black sherif ft Asake",
     "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/fast_fast_zqxl9x.jpg",
