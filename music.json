@@ -1,5 +1,29 @@
 [
   {
+  "title":"City",
+  "artist":"Black sherif ft Asake",
+  "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/fast_fast_zqxl9x.jpg",
+  "section":"new",
+  "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Black_sherif_ft_Asake-City__Official_video__48k_tw24ir.mp3",
+  "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/Black_sherif_ft_Asake-City__Official_video__48k_tw24ir.mp3"
+  },
+  {
+    "title":"GOATED",
+    "artist":"Dawnhustle ft Aya-D-DON",
+    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/fast_fast_zqxl9x.jpg",
+    "section":"trending",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775940529/DawdaHustle_-_GOATED_feat_Aya_D_Don__Official_Video__48k_abnybx.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/v1775940529/DawdaHustle_-_GOATED_feat_Aya_D_Don__Official_Video__48k_abnybx.mp3",
+  },
+  {
+    "title":"pangono",
+    "artist":"kelvin sings ft praise umali",
+    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/fast_fast_zqxl9x.jpg",
+    "section":"trending",
+    "audio":"https://res.cloudinary.com/dvvjrd7ax/video/upload/08.Kelvin-Sings-Pangono-ft-Praise-Umali_wllcgk.mp3",
+    "download":"https://res.cloudinary.com/dvvjrd7ax/video/upload/08.Kelvin-Sings-Pangono-ft-Praise-Umali_wllcgk.mp3"
+  },
+  {
     "title":"Nani",
     "artist":"Diamond Platinum",
     "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/gift_kwqexh.jpg",
