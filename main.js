@@ -82,15 +82,20 @@ links.forEach(link => {
 });
 
 
-document.querySelectorAll("audio").forEach(el => {
-    const src = el.getAttribute("src");
 
-    if (src && src.endsWith(".mp4")) {
-        const video = document.createElement("video");
-        video.src = src;
-        video.controls = true;
-        video.style.width = "100%";
 
-        el.replaceWith(video);
+
+function setNowPlaying(title) {
+  document.getElementById("now-playing").innerHTML =
+    "Now Playing: " + title;
+                      }
+
+
+document.addEventListener("play", function(e){
+  const audios = document.querySelectorAll("audio");
+  audios.forEach(audio => {
+    if (audio !== e.target) {
+      audio.pause();
     }
-});
+  });
+}, true);
