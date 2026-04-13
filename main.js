@@ -109,23 +109,4 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const query = searchInput.value.trim();
 
-if (!query) {
-   alert("Type something first");
-   return;
-                   }
-
-
-const searchInput = document.getElementById("search");
-const songsContainer = document.getElementById("songs");
-
-searchInput.addEventListener("input", () => {
-  const value = searchInput.value.toLowerCase();
-
-  const filtered = songs.filter(song =>
-    song.title.toLowerCase().includes(value)
-  );
-
-  displaySongs(filtered); // Only update songs
-});
