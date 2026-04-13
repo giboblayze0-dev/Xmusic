@@ -1,5 +1,5 @@
 let allSongs = [];
-const sections = ["new","trending","albums","videos"];
+const sections = ["new","trending","albums","news"];
 const songsPerPage = 5;
 let currentPage = {new:1, trending:1, albums:1, videos:1};
 
