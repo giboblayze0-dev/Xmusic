@@ -50,9 +50,14 @@ html {
   .nav-links.active {
     display: flex;
   }
-}
 body {
-  text-align: center;
+  background-color: #0d0d0d;
+  color: white;
+}
+
+button {
+  background-color: #f5c518;
+  color: black;
 }
 
 audio {
