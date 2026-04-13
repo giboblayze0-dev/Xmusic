@@ -1,3 +1,26 @@
+
+button {
+  background: #1db954;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #17a74a;
+}
+@media (max-width: 600px) {
+  .song {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .search-box {
+    width: 90%;
+  }
+}
 .search-box {
   width: 100%;
   max-width: 300px;
