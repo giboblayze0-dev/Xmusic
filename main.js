@@ -23,7 +23,7 @@ function loadSongs(section){
     const div = document.createElement('div');
     div.classList.add('song');
     div.innerHTML = `
-      <img src="${song.image}" alt="${song.title}">
+      <img src="${song.title}" alt="${song.image}">
       <div>
         <strong>${song.title}</strong><br>
         ${song.artist}<br>
@@ -57,7 +57,7 @@ document.getElementById('search').addEventListener('input', e => {
       const div = document.createElement('div');
       div.classList.add('song');
       div.innerHTML = `
-        <img src="${song.image}" alt="${song.title}">
+        <img src="${song.title}" alt="${song.image}">
         <div>
           <strong>${song.title}</strong><br>
           ${song.artist}<br>
