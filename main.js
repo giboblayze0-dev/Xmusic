@@ -115,7 +115,12 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-console.log("Firebase connected ✅");
+const query = searchInput.value.trim();
+
+if (!query) {
+   alert("Type something first");
+   return;
+                   }
 
 
 const searchInput = document.getElementById("search");
