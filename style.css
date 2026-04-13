@@ -1,3 +1,27 @@
+.search-box {
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #000; /* or your color */
+}
+
+/* Prevent content from hiding under menu */
+body {
+  padding-top: 60px;
+}
+
+
 html {
   scroll-behavior: smooth;
 }
