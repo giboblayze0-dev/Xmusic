@@ -107,4 +107,6 @@ const firebaseConfig = {
   measurementId: "G-WGV1FXD6EW"
 };
 
+console.log("Firebase connected!");
+
 
