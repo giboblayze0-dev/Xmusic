@@ -96,17 +96,15 @@ document.addEventListener("play", function(e){
 
 
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDI7b7BqUopaBfTC-P0vE1o5PVX3ustFOw",
   authDomain: "xmusic-eb387.firebaseapp.com",
   projectId: "xmusic-eb387",
   storageBucket: "xmusic-eb387.firebasestorage.app",
   messagingSenderId: "758209934631",
-  appId: "1:758209934631:web:adab7279758b7ae2172502",
-  measurementId: "G-2S7F5P03ZD"
+  appId: "1:758209934631:web:cac68b8b63245c7e172502",
+  measurementId: "G-WGV1FXD6EW"
 };
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
 
