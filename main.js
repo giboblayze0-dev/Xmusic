@@ -73,13 +73,7 @@ document.getElementById('search').addEventListener('input', e => {
 
 
 
-const links = document.querySelectorAll('.menu a');
 
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelector('.menu').classList.remove('active');
-  });
-});
 
 
 
