@@ -1,3 +1,22 @@
+body {
+  padding-top: 70px;
+}
+.search-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #0b1b3a; /* your dark blue */
+  padding: 10px;
+}
+.search-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0b1b3a;
+  padding: 10px;
+}
 .music-card {
   width: 250px;
   background: #0b1b3a; /* dark blue style */
