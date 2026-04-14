@@ -118,3 +118,22 @@ document.querySelector("a[href='#']").addEventListener("click", function(e) {
   });
 });
 
+
+
+fetch("songs.json")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("songs");
+
+    data.forEach(song => {
+      container.innerHTML += `
+        <div class="card">
+          <img src="${song.image}" alt="">
+          <h3>${song.title}</h3>
+          <p>${song.artist}</p>
+          <audio controls src="${song.url}"></audio>
+          <a href="${song.url}" download>Download</a>
+        </div>
+      `;
+    });
+  });
