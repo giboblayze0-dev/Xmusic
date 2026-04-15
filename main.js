@@ -1,18 +1,13 @@
-
-
-fetch('music.json')
-  .then(res => res.json())
-  .then(data => {
-    allSongs = data;
-    sections.forEach(section => loadSongs(section));
-  });
-
-
 document.getElementById('search').addEventListener('input', e => {
   const query = e.target.value.toLowerCase();
 
   const resultBox = document.querySelector('#searchResults');
   const resultContainer = resultBox.querySelector('.songs');
+  fetch('music.json')
+  .then(res => res.json())
+  .then(data => {
+    allSongs = data;
+  });
 
   resultContainer.innerHTML = '';
 
