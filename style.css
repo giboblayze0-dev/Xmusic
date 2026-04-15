@@ -1,4 +1,13 @@
-.navbar {
+h2{
+  text-align: center;
+  background-color:darkblue;
+}
+p{
+  text-aligh: center;
+  background-color:yellow;
+}
+
+  .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
