@@ -8,7 +8,8 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-}nav {
+}
+nav {
   position: sticky; /* or fixed */
   top: 0;
   z-index: 1000;
