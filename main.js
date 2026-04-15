@@ -1,21 +1,35 @@
 let allSongs = [];
 
+const sections = ["new", "trending", "albums", "videos"];
+
 // LOAD JSON
 fetch('./music.json')
   .then(res => res.json())
   .then(data => {
     allSongs = data;
-    renderSongs(allSongs);
+
+    // show all sections
+    sections.forEach(section => {
+      displaySongs(section);
+    });
   })
-  .catch(err => console.error("Error loading music:", err));
+  .catch(err => console.error("Error:", err));
 
 
-// RENDER SONGS
-function renderSongs(songs) {
-  const container = document.getElementById("musicContainer");
+// DISPLAY SONGS BY SECTION
+function displaySongs(section) {
+  const container = document.getElementById(section);
   container.innerHTML = "";
 
-  songs.forEach(song => {
+  // filter songs by section
+  const filtered = allSongs.filter(song => song.section === section);
+
+  if (filtered.length === 0) {
+    container.innerHTML = "<p>No songs</p>";
+    return;
+  }
+
+  filtered.forEach(song => {
     container.innerHTML += `
       <div class="song-card">
         <img src="${song.cover}" class="cover">
@@ -34,15 +48,15 @@ function renderSongs(songs) {
 }
 
 
-// SEARCH ENGINE (INSTANT 🔥)
+// 🔍 SEARCH ENGINE (INSTANT)
 document.getElementById("searchInput").addEventListener("input", function () {
   const query = this.value.toLowerCase();
   const resultsContainer = document.getElementById("searchResults");
 
-  // if empty → show all songs
+  // if empty → restore sections
   if (query === "") {
     resultsContainer.innerHTML = "";
-    renderSongs(allSongs);
+    sections.forEach(section => displaySongs(section));
     return;
   }
 
@@ -55,7 +69,9 @@ document.getElementById("searchInput").addEventListener("input", function () {
 
   if (filtered.length === 0) {
     resultsContainer.innerHTML = "<p>No results found</p>";
-    document.getElementById("musicContainer").innerHTML = "";
+    sections.forEach(sec => {
+      document.getElementById(sec).innerHTML = "";
+    });
     return;
   }
 
@@ -76,8 +92,10 @@ document.getElementById("searchInput").addEventListener("input", function () {
     `;
   });
 
-  // hide main list when searching
-  document.getElementById("musicContainer").innerHTML = "";
+  // hide sections when searching
+  sections.forEach(sec => {
+    document.getElementById(sec).innerHTML = "";
+  });
 });
 
 
