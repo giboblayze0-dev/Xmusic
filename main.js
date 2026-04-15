@@ -1,65 +1,69 @@
-document.getElementById('search').addEventListener('input', e => {
-  const query = e.target.value.toLowerCase();
+let allSongs = [];
 
-  const resultBox = document.querySelector('#searchResults');
-  const resultContainer = resultBox.querySelector('.songs');
-  fetch('music.json')
+// LOAD MUSIC
+fetch('./music.json')
   .then(res => res.json())
   .then(data => {
     allSongs = data;
+
+    renderSongs(allSongs); // show all songs first
+  })
+  .catch(err => console.error("Fetch error:", err));
+
+
+// DISPLAY SONGS
+function renderSongs(songs) {
+  const container = document.getElementById("new");
+  container.innerHTML = "";
+
+  songs.forEach(song => {
+    container.innerHTML += `
+      <div class="song">
+        <img src="${song.cover}" width="100%">
+        <h3>${song.title}</h3>
+        <p>${song.artist}</p>
+        <audio controls src="${song.url}"></audio>
+      </div>
+    `;
   });
+}
 
-  resultContainer.innerHTML = '';
 
-  // ✅ IF EMPTY → HIDE RESULTS & SHOW NORMAL SECTIONS
-  if(query === ""){
-    resultBox.style.display = "none";
+// SEARCH (INSTANT 🔥)
+document.getElementById("searchInput").addEventListener("input", function () {
+  const query = this.value.toLowerCase();
+  const resultsContainer = document.getElementById("searchResults");
 
-    sections.forEach(section => {
-      document.getElementById(section).style.display = "block";
-      const container = document.querySelector(`#${section} .songs`);
-      container.innerHTML = '';
-      currentPage[section] = 1;
-      loadSongs(section);
-    });
-
+  if (query === "") {
+    resultsContainer.innerHTML = "";
+    renderSongs(allSongs); // restore all songs
     return;
   }
 
-  // ✅ SHOW RESULT BOX & HIDE SECTIONS
-  resultBox.style.display = "block";
-  sections.forEach(section => {
-    document.getElementById(section).style.display = "none";
-  });
-
-  // ✅ FILTER ALL SONGS (NOT BY SECTION)
-  const filtered = allSongs.filter(s => 
-    s.title.toLowerCase().includes(query) ||
-    s.artist.toLowerCase().includes(query)
+  const filtered = allSongs.filter(song =>
+    song.title.toLowerCase().includes(query) ||
+    song.artist.toLowerCase().includes(query)
   );
 
-  // ✅ NO RESULTS
-  if(filtered.length === 0){
-    resultContainer.innerHTML = `<p style="color:white;">No results found</p>`;
+  resultsContainer.innerHTML = "";
+
+  if (filtered.length === 0) {
+    resultsContainer.innerHTML = "<p>No results found</p>";
     return;
   }
 
-  // ✅ SHOW RESULTS
   filtered.forEach(song => {
-    const div = document.createElement('div');
-    div.classList.add('song');
-    div.innerHTML = `
-      <img src="${song.image}" alt="${song.title}">
-      <div>
-        <strong>${song.title}</strong><br>
-        ${song.artist}<br>
-        <audio controls src="${song.audio}"></audio>
-        <a href="${song.download}" download>
-          <button>Download</button>
-        </a>
-      </div>`;
-    resultContainer.appendChild(div);
+    resultsContainer.innerHTML += `
+      <div class="song">
+        <img src="${song.cover}" width="100%">
+        <h3>${song.title}</h3>
+        <p>${song.artist}</p>
+      </div>
+    `;
   });
+
+  // OPTIONAL: hide main songs when searching
+  document.getElementById("new").innerHTML = "";
 });
 
 
