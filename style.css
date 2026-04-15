@@ -1,3 +1,111 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: white;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background: #111a33;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav h1 {
+  font-size: 18px;
+}
+
+nav input {
+  padding: 8px;
+  width: 50%;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.section {
+  padding: 15px;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+  color: #4da3ff;
+}
+
+.songs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: #16213e;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h3 {
+  font-size: 14px;
+  margin: 6px 0 2px;
+}
+
+.card p {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: #4da3ff;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.loadmore {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #4da3ff;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Fix */
+@media (max-width: 600px) {
+  nav input {
+    width: 60%;
+  }
+
+  .card img {
+    height: 120px;
+  }
+}
+
 /* RESET */
 * {
   margin: 0;
