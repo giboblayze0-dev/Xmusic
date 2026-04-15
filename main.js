@@ -61,47 +61,14 @@ function renderSection(section) {
 }
 
 // LOAD MORE BUTTONS
-const songsPerLoad = 5;
-
-const state = {
-  new: { page: 1 },
-  trending: { page: 1 },
-  albums: { page: 1 },
-  videos: { page: 1 }
-};
-
-function renderSongs(section, data) {
-  const container = document.querySelector(`#${section} .songs`);
-  const start = 0;
-  const end = state[section].page * songsPerLoad;
-
-  container.innerHTML = data.slice(start, end).map(song => `
-    <div class="song">
-      <img src="${song.image}" />
-      <h3>${song.title}</h3>
-      <p>${song.artist}</p>
-      <audio controls src="${song.audio}"></audio>
-    </div>
-  `).join('');
-}
-
-function loadMore(section, data) {
-  const btn = document.querySelector(`#${section} .loadmore`);
-
+document.querySelectorAll(".loadmore").forEach(btn => {
   btn.addEventListener("click", () => {
-    state[section].page++;
+    const section = btn.dataset.section;
+    state[section]++;
 
-    const maxPages = Math.ceil(data.length / songsPerLoad);
-
-    renderSongs(section, data);
-
-    // OPTIONAL: hide button when finished
-    if (state[section].page >= maxPages) {
-      btn.innerText = "No More Songs";
-      btn.disabled = true;
-    }
+    renderSection(section);
   });
-          }
+});
 
 // SEARCH (REAL TIME)
 document.getElementById("search").addEventListener("input", () => {
