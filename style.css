@@ -1,4 +1,14 @@
-nav {
+.song-card {
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.song-card:hover {
+  transform: scale(1.05);
+}nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}nav {
   position: sticky; /* or fixed */
   top: 0;
   z-index: 1000;
