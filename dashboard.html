@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XMusic Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="box">
+  <h2>🎵 XMusic Admin</h2>
+
+  <input id="title" placeholder="Song Title">
+  <input id="artist" placeholder="Artist">
+  <input type="file" id="audio">
+  <input type="file" id="image">
+
+  <button onclick="uploadSong()">Upload</button>
+
+  <h3>📀 All Songs</h3>
+  <div id="songList"></div>
+
+  <button onclick="logout()" class="logout">Logout</button>
+
+  <p id="msg"></p>
+</div>
+
+<script type="module" src="admin.js"></script>
+</body>
+  </html>
