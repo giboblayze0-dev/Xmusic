@@ -1,3 +1,90 @@
+
+
+
+
+
+
+
+const supabaseUrl = "YOUR_SUPABASE_URL";
+const supabaseKey = "YOUR_ANON_KEY";
+
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+let allSongs = [];
+
+// LOAD SONGS
+async function loadSongs() {
+  const { data, error } = await supabase
+    .from("songs")
+    .select("*");
+
+  if (error) {
+    console.log("Error loading songs:", error);
+    return;
+  }
+
+  allSongs = data;
+  renderSongs();
+}
+
+loadSongs();
+
+// GET AUDIO URL FROM STORAGE
+function getAudioUrl(filePath) {
+  return supabase
+    .storage
+    .from("music")
+    .getPublicUrl(filePath).data.publicUrl;
+}
+
+// DOWNLOAD SONG
+function downloadSong(filePath, title) {
+  const url = getAudioUrl(filePath);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = title + ".mp3";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+// RENDER SONGS (EDIT THIS PART TO MATCH YOUR UI)
+function renderSongs() {
+  const container = document.getElementById("songsContainer");
+  container.innerHTML = "";
+
+  allSongs.forEach(song => {
+    const div = document.createElement("div");
+
+    div.innerHTML = `
+      <img src="${song.image}" width="100">
+      <h3>${song.title}</h3>
+      <p>${song.artist}</p>
+
+      <audio controls src="${getAudioUrl(song.file_path)}"></audio>
+
+      <button onclick="downloadSong('${song.file_path}', '${song.title}')">
+        Download
+      </button>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 let allSongs = [];
 
 const state = {
