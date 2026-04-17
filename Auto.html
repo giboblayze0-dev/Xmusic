@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loading...</title>
+  <meta name="description" content="">
+</head>
+<body>
+
+<h1 id="title"></h1>
+<p id="artist"></p>
+
+<img id="cover" width="200">
+<br><br>
+
+<audio id="audio" controls></audio>
+<br><br>
+
+<a id="download" download>Download MP3</a>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const slug = params.get("song");
+
+fetch("/data/songs.json")
+.then(res => res.json())
+.then(songs => {
+
+  const song = songs.find(s => s.slug === slug);
+
+  if (!song) {
+    document.body.innerHTML = "Song not found";
+    return;
+  }
+
+  // 🎵 Content
+  document.getElementById("title").innerText = song.title;
+  document.getElementById("artist").innerText = song.artist;
+  document.getElementById("cover").src = song.image;
+  document.getElementById("audio").src = song.audio;
+  document.getElementById("download").href = song.audio;
+
+  // 🔥 SEO (AUTO)
+  const seoTitle = `${song.artist} – ${song.title} MP3 Download`;
+  const seoDesc = `Download ${song.artist} ${song.title} MP3 and stream online`;
+
+  document.title = seoTitle;
+  document.querySelector("meta[name='description']").setAttribute("content", seoDesc);
+
+});
+</script>
+
+</body>
+</html>
