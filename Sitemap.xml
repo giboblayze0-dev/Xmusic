@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://your-site.com/</loc>
+    <loc>https:</loc>
   </url>
 
   <url>
-    <loc>https://your-site.com/songs/song.html?song=why-me</loc>
+    <loc>https:/songs/song.html?song=why-me</loc>
   </url>
 
   <url>
-    <loc>https://your-site.com/songs/song.html?song=no-love</loc>
+    <loc>https:/songs/song.html?song=no-love</loc>
   </url>
 
 </urlset>
