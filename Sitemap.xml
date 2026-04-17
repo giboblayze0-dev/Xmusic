@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://your-site.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://your-site.com/songs/song.html?song=why-me</loc>
+  </url>
+
+  <url>
+    <loc>https://your-site.com/songs/song.html?song=no-love</loc>
+  </url>
+
+</urlset>
