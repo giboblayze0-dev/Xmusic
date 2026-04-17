@@ -175,3 +175,26 @@ const results = songs.filter(song =>
 
 
 
+
+fetch("/data/songs.json")
+.then(res => res.json())
+.then(songs => {
+
+  let html = "";
+
+  songs.forEach(song => {
+    html += `
+      <div>
+        <h3>${song.artist} - ${song.title}</h3>
+        <a href="/songs/song.html?song=${song.slug}">
+          Play / Download
+        </a>
+      </div>
+    `;
+  });
+
+  document.getElementById("songs").innerHTML = html;
+
+});
+
+
