@@ -91,6 +91,9 @@
   <div class="songs" data-section="news"></div>
   <button class="loadmore" data-section="news">Load More</button>
 </div>
+    <input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
 
 
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
@@ -164,6 +167,41 @@ async function getSongs() {
 
 getSongs();
                </script>
+
+
+
+
+
+    <script>
+async function addSong() {
+  const { error } = await supabase.from("songs").insert([
+    {
+      title: title.value,
+      artist: artist.value,
+      image: image.value,
+      audio: audio.value,
+      download: audio.value
+    }
+  ]);
+
+  if (error) alert(error.message);
+  else alert("Song added 🎵");
+}
+    </script>
+
+
+
+    <script>
+async function login() {
+  const { error } = await supabase.auth.signInWithPassword({
+    email: email.value,
+    password: password.value
+  });
+
+  if (error) alert(error.message);
+  else alert("Admin logged in ✅");
+}
+    </script>
 
 
 
