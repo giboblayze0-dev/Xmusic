@@ -11,7 +11,7 @@ const songsPerPage = 5;
 
 // LOAD DATA
 
-  .then(res => res.json())
+  
   .then(data => {
     allSongs = data;
     renderAll();
