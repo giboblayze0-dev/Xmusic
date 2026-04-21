@@ -11,11 +11,17 @@ const songsPerPage = 5;
 
 // LOAD DATA
 
-  
-  .then(data => {
-    allSongs = data;
-    renderAll();
-  });
+ // fetch("music.json")
+  //  .then(res=>res.json())
+ // .then(data => {
+   // allSongs = data;
+    //renderAll()  });
+
+const { data, error } = await supabase
+  .from('songs')
+  .select('*');
+
+displaySongs(data);
 
 // RENDER ALL SECTIONS
 function renderAll() {
