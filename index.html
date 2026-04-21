@@ -116,47 +116,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-const supabaseUrl = "https://imjbpevcswltjrkdtoca.supabase.co";
-const supabaseKey = "sb_publishable_xL7GQMqn7cD12FHDwQOW0A_v84SfiGr";
+const supabaseUrl = "https://YOUR_PROJECT_ID.supabase.co";
+const supabaseKey = "YOUR_ANON_KEY";
 
-const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
-async function loadSongs() {
-  const { data, error } = await supabase
-    .from("songs")
-    .select("*");
+// reusable function
+async function loadSection(sectionName, elementId) {
+    const { data, error } = await supabaseClient
+        .from('songs')
+        .select('*')
+        .eq('section', sectionName);
 
-  if (error) {
-    console.log(error);
-    return;
-  }
+    if (error) {
+        console.error(sectionName, error);
+        return;
+    }
 
-  const container = document.getElementById("songs");
+    const container = document.getElementById(elementId);
+    container.innerHTML = "";
 
-  data.forEach(song => {
-    const div = document.createElement("div");
+    data.forEach(song => {
+        container.innerHTML += `
+            <div class="song">
+                <img src="${song.image}" width="150">
+                <h3>${song.title}</h3>
+                <p>${song.artist}</p>
 
-    div.innerHTML = `
-      <h3>${song.title}</h3>
-      <p>${song.artist}</p>
-      <img src="${song.image}" width="200"><br>
-      <audio controls src="${song.audio}"></audio><br>
-      <a href="${song.download}" download>Download</a>
-      <hr>
-    `;
+                <audio controls>
+                    <source src="${song.audio}" type="audio/mpeg">
+                </audio>
 
-    container.appendChild(div);
-  });
+                <a href="${song.download}" download>Download</a>
+            </div>
+        `;
+    });
 }
 
-loadSongs();
+// load all sections
+loadSection("new", "newSongs");
+loadSection("trending", "trendingSongs");
+loadSection("album", "albumSongs");
+loadSection("news", "newsSongs");
 </script>
-
-</body>
-</html>
 
 
 
