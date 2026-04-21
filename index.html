@@ -116,6 +116,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script>
+const supabaseUrl = "YOUR_URL_HERE";
+const supabaseKey = "YOUR_ANON_KEY_HERE";
+
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+async function loadSongs() {
+  const { data, error } = await supabase
+    .from("songs")
+    .select("*");
+
+  if (error) {
+    console.log(error);
+    return;
+  }
+
+  const container = document.getElementById("songs");
+
+  data.forEach(song => {
+    const div = document.createElement("div");
+
+    div.innerHTML = `
+      <h3>${song.title}</h3>
+      <p>${song.artist}</p>
+      <img src="${song.image}" width="200"><br>
+      <audio controls src="${song.audio}"></audio><br>
+      <a href="${song.download}" download>Download</a>
+      <hr>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+loadSongs();
+</script>
+
+</body>
+</html>
+
 
 
     <script src="main.js"></script>       
