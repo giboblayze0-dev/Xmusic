@@ -10,7 +10,7 @@ const state = {
 const songsPerPage = 5;
 
 // LOAD DATA
-fetch("music.json")
+
   .then(res => res.json())
   .then(data => {
     allSongs = data;
