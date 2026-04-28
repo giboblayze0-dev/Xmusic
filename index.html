@@ -97,7 +97,7 @@
 <h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
 
 <p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
-based on Lilongwe area 25<br>
+based on Lilongwe area 25<br></p>
 
     
     <h2>Developer Gibo Blayze</h2></p>
@@ -116,52 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-const supabaseUrl = "https://imjbpevcswltjrkdtoca.supabase.co";
-const supabaseKey = "sb_publishable_xL7GQMqn7cD12FHDwQOW0A_v84SfiGr";
-
-const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
-
-// reusable function
-async function loadSection(sectionName, elementId) {
-    const { data, error } = await supabaseClient
-        .from('songs')
-        .select('*')
-        .eq('section', sectionName);
-
-    if (error) {
-        console.error(sectionName, error);
-        return;
-    }
-
-    const container = document.getElementById(elementId);
-    container.innerHTML = "";
-
-    data.forEach(song => {
-        container.innerHTML += `
-            <div class="song">
-                <img src="${song.image}" width="150">
-                <h3>${song.title}</h3>
-                <p>${song.artist}</p>
-
-                <audio controls>
-                    <source src="${song.audio}" type="audio/mpeg">
-                </audio>
-
-                <a href="${song.download}" download>Download</a>
-            </div>
-        `;
-    });
-}
-
-// load all sections
-loadSection("new", "newSongs");
-loadSection("trending", "trendingSongs");
-loadSection("album", "albumSongs");
-loadSection("news", "newsSongs");
-</script>
 
 
 
