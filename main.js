@@ -16,11 +16,6 @@ const songsPerPage = 5;
   .then(data => {
     allSongs = data;
     renderAll()  });
-
-
-
-displaySongs(data);
-
 // RENDER ALL SECTIONS
 function renderAll() {
   Object.keys(state).forEach(section => renderSection(section));
