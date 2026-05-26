@@ -34,22 +34,26 @@
       
 
 <header>
-  <nav class="navbar">
-    <h2 class="logo">BlayzeVibe</h2>
+  <div class="navbar">
 
-    <div class="menu-toggle" id="menu-toggle">
-      ☰
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <a href="#" class="logo">ZengoMusic</a>
+
+</div>
+
+<div class="nav-links" id="navMenu">
+    <a href="#">Home</a>
+    <a href="#">Trending</a>
+    <a href="#">Albums</a>
+    <a href="#">Videos</a>
+    <a href="#">Contact</a>
+</div>
+
+<div class="search-box">
+    <input type="text" placeholder="Search music...">
+    <button>🔍</button>
     </div>
-
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#new">New</a></li>
-      <li><a href="#trending">Trending</a></li>
-      <li><a href="#albums">Albums</a></li>
-      <li><a href="#news">news</a></li>
-    </ul>
-      <input type="text" id="search" placeholder="search songs">
-  </nav>
 </header>
     <div id="new" class="section">
   <h2>New Music</h2>
