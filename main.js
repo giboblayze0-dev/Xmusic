@@ -1,3 +1,8 @@
+function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("active");
+}
+
+
 let allSongs = [];
 
 const state = {
