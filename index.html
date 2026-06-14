@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZenyoMusic</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <button class="menu-btn">☰</button>
+    <h1>ZenyoMusic</h1>
+</header>
+
+<div class="search-box">
+    <input type="text" placeholder="Search music...">
+    <button>🔍</button>
+</div>
+
+<!-- New Music -->
+<section>
+    <h2>New Music</h2>
+
+    <div class="music-grid" id="newMusic">
+        <div class="card">Song 1</div>
+        <div class="card">Song 2</div>
+        <div class="card">Song 3</div>
+        <div class="card">Song 4</div>
+        <div class="card">Song 5</div>
+        <div class="card">Song 6</div>
+
+        <div class="card hidden">Song 7</div>
+        <div class="card hidden">Song 8</div>
+        <div class="card hidden">Song 9</div>
+        <div class="card hidden">Song 10</div>
+        <div class="card hidden">Song 11</div>
+        <div class="card hidden">Song 12</div>
+    </div>
+
+    <button class="load-more" onclick="loadMore('newMusic', this)">
+        Load More
+    </button>
+</section>
+
+<!-- Trending -->
+<section>
+    <h2>Trending Music</h2>
+
+    <div class="music-grid" id="trendingMusic">
+        <div class="card">Trending 1</div>
+        <div class="card">Trending 2</div>
+        <div class="card">Trending 3</div>
+        <div class="card">Trending 4</div>
+        <div class="card">Trending 5</div>
+        <div class="card">Trending 6</div>
+
+        <div class="card hidden">Trending 7</div>
+        <div class="card hidden">Trending 8</div>
+        <div class="card hidden">Trending 9</div>
+    </div>
+
+    <button class="load-more" onclick="loadMore('trendingMusic', this)">
+        Load More
+    </button>
+</section>
+
+<!-- Albums -->
+<section>
+    <h2>Albums</h2>
+
+    <div class="music-grid" id="albums">
+        <div class="card">Album 1</div>
+        <div class="card">Album 2</div>
+        <div class="card">Album 3</div>
+        <div class="card">Album 4</div>
+        <div class="card">Album 5</div>
+        <div class="card">Album 6</div>
+
+        <div class="card hidden">Album 7</div>
+        <div class="card hidden">Album 8</div>
+    </div>
+
+    <button class="load-more" onclick="loadMore('albums', this)">
+        Load More
+    </button>
+</section>
+
+<!-- Videos -->
+<section>
+    <h2>Videos</h2>
+
+    <div class="music-grid" id="videos">
+        <div class="card">Video 1</div>
+        <div class="card">Video 2</div>
+        <div class="card">Video 3</div>
+        <div class="card">Video 4</div>
+        <div class="card">Video 5</div>
+        <div class="card">Video 6</div>
+
+        <div class="card hidden">Video 7</div>
+        <div class="card hidden">Video 8</div>
+    </div>
+
+    <button class="load-more" onclick="loadMore('videos', this)">
+        Load More
+    </button>
+</section>
+
+<script src="script.js"></script>
+</body>
+          </html>
