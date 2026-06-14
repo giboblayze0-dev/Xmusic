@@ -1,358 +1,81 @@
-/* ===== NAVBAR ===== */
-.navbar{
-    width:100%;
-    background:#000;
-    padding:15px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,0.5);
-}
-
-/* ===== LOGO ===== */
-.logo{
-    color:#ff0000;
-    font-size:38px;
-    font-weight:bold;
-    text-decoration:none;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family:Arial,sans-serif;
 }
 
-/* ===== MENU ICON ===== */
+body{
+    background:#f5f5f5;
+    padding:15px;
+}
+
+header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
 .menu-btn{
-    font-size:42px;
-    color:white;
-    cursor:pointer;
-    background:none;
+    font-size:25px;
     border:none;
+    background:none;
+    cursor:pointer;
 }
 
-/* ===== NAV LINKS ===== */
-.nav-links{
-    position:absolute;
-    top:80px;
-    left:0;
-    width:100%;
-    background:#111;
-    display:none;
-    flex-direction:column;
-    padding:10px 0;
-}
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    padding:15px 25px;
-    font-size:20px;
-    transition:0.3s;
-}
-
-.nav-links a:hover{
-    background:#ff0000;
-    color:white;
-}
-
-/* ===== SHOW MENU ===== */
-.nav-links.active{
-    display:flex;
-}
-
-/* ===== SEARCH BAR ===== */
 .search-box{
-    width:100%;
     display:flex;
-    margin-top:20px;
+    margin-bottom:30px;
 }
 
 .search-box input{
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:10px 0 0 10px;
-    font-size:20px;
-    outline:none;
+    flex:1;
+    padding:12px;
+    border:2px solid #ddd;
+    border-radius:25px 0 0 25px;
 }
 
 .search-box button{
-    width:80px;
+    padding:12px 20px;
     border:none;
-    background:red;
+    background:#ff3b3b;
     color:white;
-    font-size:24px;
-    border-radius:0 10px 10px 0;
-    cursor:pointer;
+    border-radius:0 25px 25px 0;
 }
 
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-
-    .logo{
-        font-size:30px;
-    }
-
-    .menu-btn{
-        font-size:36px;
-    }
-
-    .search-box input{
-        font-size:18px;
-    }
-}
-
-p {
-  text-align: center;
-}
-body {
-  padding-top: 60px; /* same as nav height */
+section{
+    margin-bottom:40px;
 }
 
 h2{
-  text-align: center;
-  
-}
-p{
-  text-aligh: center;
-  
-}
-h1{
-  text-aligh: center;
-}
-audio {
-  width: 160px;       /* makes it smaller */
-  height: 30px;       /* reduces height */
-  transform: scale(0.9);
+    margin-bottom:15px;
 }
 
-/* If audio is inside cards */
-.song-card audio {
-  width: 140px;
-  height: 28px;
+.music-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+    gap:10px;
 }
 
-/* Make controls tighter on mobile */
-@media (max-width: 600px) {
-  audio {
-    width: 120px;
-    height: 25px;
-  }
-}
-img {
-  width: 80%;          /* responsive */
-  max-width: 300px;    /* limit size */
-  height: auto;
-  display: block;
-  margin: 15px auto;
-  border-radius: 12px;
-}
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-
-}
-.section {
-  padding: 15px;
+.card{
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
 }
 
-.section h2 {
-  margin-bottom: 10px;
-  color: #4da3ff;
+.hidden{
+    display:none;
 }
 
-.songs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-}
-
-.card {
-
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 10px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.card h3 {
-  font-size: 14px;
-  margin: 6px 0 2px;
-}
-
-.card p {
-  font-size: 12px;
-  color: #aaa;
-}
-
-.card a {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 6px 10px;
-
-  
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 12px;
-}
-
-.loadmore {
-  margin-top: 10px;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-
-  
-  cursor: pointer;
-}
-
-/* Mobile Fix */
-@media (max-width: 600px) {
-  nav input {
-    width: 60%;
-  }
-
-  .card img {
-    height: 120px;
-  }
-}
-
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-/* BODY */
-body {
-
-
-  line-height: 1.5;
-}
-
-/* HEADER / NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-nav h1 {
-  font-size: 20px;
-  color: #1db954;
-}
-/* SECTIONS */
-.section {
-  padding: 20px;
-}
-
-.section h2 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  border-left: 4px solid #1db954;
-  padding-left: 10px;
-}
-
-/* SONG GRID */
-.songs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 15px;
-}
-
-/* SONG CARD */
-.song {
-  background: #1a1a1a;
-  padding: 10px;
-  border-radius: 12px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.song:hover {
-  transform: scale(1.05);
-  background: #222;
-}
-
-.song img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.song h3 {
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-.song p {
-  font-size: 12px;
-  color: #aaa;
-}
-
-/* BUTTON */
-button.loadmore {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  border: none;
-
-  
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button.loadmore:hover {
-  background: #17a74a;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  nav input {
-    width: 100%;
-  }
-
-  .songs {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  .song h3 {
-    font-size: 12px;
-  }
-
-  .song p {
-    font-size: 11px;
-  }
-
-  nav h1 {
-    font-size: 18px;
-  }
-
-  
+.load-more{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    background:#ff3b3b;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    }
