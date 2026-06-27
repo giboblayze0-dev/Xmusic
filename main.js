@@ -1,3 +1,13 @@
+function loadMore(sectionId, button) {
+    const hiddenItems = document.querySelectorAll("#" + sectionId + " .hidden");
+
+    hiddenItems.forEach(function(item) {
+        item.style.display = "block";
+        item.classList.remove("hidden");
+    });
+
+    button.style.display = "none";
+}
 const searchBox = document.getElementById("searchBox");
 
 searchBox.addEventListener("keyup", function () {
@@ -11,12 +21,3 @@ searchBox.addEventListener("keyup", function () {
     });
 });
 
-function loadMore(sectionId, button){
-    const hidden = document.querySelectorAll("#"+sectionId+" .hidden");
-
-    hidden.forEach(item=>{
-        item.classList.remove("hidden");
-    });
-
-    button.style.display="none";
-}
