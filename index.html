@@ -1,104 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Character Encoding -->
-    <meta charset="UTF-8">
+<!-- New Music -->
+<h2>New Music</h2>
+<div class="section" id="newMusic">
+    <!-- First 7 songs -->
+    <a href="song1.html">Song 1</a>
+    <a href="song2.html">Song 2</a>
+    <a href="song3.html">Song 3</a>
+    <a href="song4.html">Song 4</a>
+    <a href="song5.html">Song 5</a>
+    <a href="song6.html">Song 6</a>
+    <a href="song7.html">Song 7</a>
 
-    <!-- Mobile Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Website Title -->
-    <title>Music</title>
-
-    <!-- Website Description -->
-    <meta name="description" content="Listen and download the latest music on my website">
-
-    <!-- Author -->
-    <meta name="author" content="Your Name">
-
-    <!-- CSS File -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="img/logo.png" type="image/png">
-
-</head>
-<body>
-
-<nav>
-  <ul>
-    
-    <li><a href="#home">HOME</a></li>
-    <li><a href="#new-music">NEW MUSIC</a></li>
-    <li><a href="#trending-music">TRENDING MUSIC</a></li>
-    <li><a href="#album">ALBUM</a></li>
-    <li><a href="#videos">VIDEOS</a></li>
-  </ul>
-</nav>
-<br><br><br>
-<div id="new-music">
-<h2>NEW MUSIC</h2>
-
-<h4>Best Gibo Blayze upload music around Vibe All Time Great choice</h4>
-<br><br>
-<div class="song">
-  <h3>Gibo-Blayze-Yankha Phone</h3>
-  <img src="image/image/image_basi (1).jpg" width="200">
-  <audio controls>
-    <source src="music/music(3)/Gibo-Blayze-Yankha-Phoneprod.Tingset.mp3" type="audio/mpeg">
-  </audio>
-  <a href="music/music(3)Gibo-Blayze-Yankha-Phoneprod.mp3" download >Download</a>
+    <!-- Hidden songs -->
+    <a href="song8.html" class="hidden">Song 8</a>
+    <a href="song9.html" class="hidden">Song 9</a>
+    <a href="song10.html" class="hidden">Song 10</a>
 </div>
+<button onclick="loadMore('newMusic', this)">Load More</button>
+
+<!-- Trending Music -->
+<h2>Trending Music</h2>
+<div class="section" id="trendingMusic">
+    <!-- First 7 songs -->
+    ...
 </div>
-<br><br>
-    <a href="mlee-limbika.html">Mlee Limbika.mp3</a>
+<button onclick="loadMore('trendingMusic', this)">Load More</button>
 
-<br><br><br>
-<div id="trending-music">
-<h2>TRENDING MUSIC</h2>
-
-
-<h4>best music vibe all the time</h4>
-<br><br>
-<div class="song">
-<h3>Gibo-Blayze-Why Me</h3>
-<img src="image/image/image_basi (1).jpg"  width="200">
-<audio controls>
-<source src="music/music(3)/Gibo-Blayze-Why-MeProd.Tingset.mp3" type="audio/mpeg">
-</audio>
-<a href="music/music(3)/Gibo-Blayze-Why-Meprod.mp3" download>Download</a>
+<!-- Videos -->
+<h2>Videos</h2>
+<div class="section" id="videos">
+    <!-- First 7 videos -->
+    ...
 </div>
+<button onclick="loadMore('videos', this)">Load More</button>
+
+<!-- International Videos -->
+<h2>International Videos</h2>
+<div class="section" id="internationalVideos">
+    <!-- First 7 videos -->
+    ...
 </div>
-
-
-
-<br><br><br>
-<div id="album">
-<h2>ABULM</h2>
-<h4>Best Gibo Blayze download play best music vibe all the time</h4>
-<br><br>
-<div class="song">
-  <h3>Gibo-Blayze-Ndatopa Ine</h3>
-  <img src="image/image/image_basi (1).jpg" width="200">
-  <audio controls>
-    <source src="music/music(3)/Gibo-Blayze-Ndatopa-IneProd.Tingset.mp3" type="audio/mpeg">
-    
-  </audio>
-  <views:<span id="views1">0</span>
-  <a href="music/music(3)/Gibo-Blayze-Ndatopa-IneProd.Tingset.mp3" download>Download</a>
-</div>
-</div>
-
-<br><br><br>
-<div id="videos">
-<h2>VIDEOS</h2>
-<br><br>
-
-
-</div>
-
-<h4>best Gibo Blayze your upload music around world best vibe all the time</h4>
-<p>contact us on 0983593493 call Whatsapp<br>We want to help upcoming artist to reach more funs<br>Nocoypright<br>Developed By Gibo Blayze<br>public 2026<br>
-<a href="index.home">BACKTOP</a></p>
-</body>
-  </html>
+<button onclick="loadMore('internationalVideos', this)">Load More</button>
