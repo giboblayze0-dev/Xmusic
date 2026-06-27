@@ -1,3 +1,40 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: Arial;
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ 2 columns = 2-row feel */
+  gap: 10px;
+  padding: 10px;
+}
+
+.song {
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Load More Button */
+.load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 25px;
+  background: yellow;   /* ✅ yellow color */
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .hidden {
     display: none;
 }
