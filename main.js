@@ -10,6 +10,7 @@ searchBox.addEventListener("keyup", function () {
             : "none";
     });
 });
+
 function loadMore(sectionId, button){
     const hidden = document.querySelectorAll("#"+sectionId+" .hidden");
 
