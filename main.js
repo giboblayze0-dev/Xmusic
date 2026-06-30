@@ -1,3 +1,16 @@
+const song = `
+<a href="${item.link}">
+    <img src="${item.image}" alt="${item.title}">
+</a>
+
+<h3>
+    <a href="${item.link}">${item.title}</a>
+</h3>
+`;
+
+document.getElementById("new-music").innerHTML += song;
+
+
 function loadMore(sectionId, button) {
     const hiddenItems = document.querySelectorAll("#" + sectionId + " .hidden");
 
