@@ -1,3 +1,47 @@
+fetch("music.json")
+.then(res => res.json())
+.then(data => {
+
+  let newMusic = "";
+  let trending = "";
+  let albums = "";
+
+  data.forEach(song => {
+
+    let item = `
+      <div class="song-card">
+        <a href="${song.link}">
+          <img src="${song.image}" alt="music">
+        </a>
+      </div>
+    `;
+
+    if(song.section === "new"){
+      newMusic += item;
+    }
+
+    if(song.section === "trending"){
+      trending += item;
+    }
+
+    if(song.section === "album"){
+      albums += item;
+    }
+
+  });
+
+  document.getElementById("new").innerHTML = newMusic;
+  document.getElementById("trending").innerHTML = trending;
+  document.getElementById("albums").innerHTML = albums;
+
+});
+
+
+
+
+
+
+
 const searchBox = document.getElementById("searchBox");
 
 searchBox.addEventListener("keyup", function () {
@@ -40,14 +84,7 @@ async function searchSongs() {
   loading.style.display = "none";
 }
 
-let allSongs = [];
 
-const state = {
-  new: 1,
-  trending: 1,
-  albums: 1,
-  news: 1
-};
 
 const songsPerPage = 5;
 
