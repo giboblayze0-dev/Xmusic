@@ -34,14 +34,15 @@ function show(section){
   songs[section].slice(0, limit[section]).forEach(song => {
 
     html += `
-      <div class="song-card">
-        <a href="${song.link}">
-          <img src="${song.image}" alt="music">
-        </a>
-      </div>
-    `;
+<div class="song-card">
 
-  });
+  <a href="${song.link}">
+    <img src="${song.image}" alt="${song.title}">
+    <h3>${song.title}</h3>
+  </a>
+
+</div>
+`;
 
   document.getElementById(section).innerHTML = html;
 
