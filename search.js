@@ -1,52 +1,39 @@
-let searchBox=document.getElementById("search");
+const searchBox = document.getElementById("search");
+const results = document.getElementById("results");
 
+fetch("../music.json")
+  .then(res => res.json())
+  .then(data => {
 
-searchBox.addEventListener("keyup",function(){
+    searchBox.addEventListener("keyup", function () {
 
-let text=this.value.toLowerCase();
+      const text = this.value.toLowerCase().trim();
 
+      if (text === "") {
+        results.innerHTML = "";
+        return;
+      }
 
-fetch("music.json")
-.then(res=>res.json())
-.then(data=>{
+      const found = data.filter(song =>
+        song.title.toLowerCase().includes(text) ||
+        song.artist.toLowerCase().includes(text)
+      );
 
+      if (found.length === 0) {
+        results.innerHTML = "<p>No results found</p>";
+        return;
+      }
 
-let result="";
+      results.innerHTML = found.map(song => `
+        <div class="song">
+          <a href="../${song.link}">
+            <img src="../${song.image}" alt="${song.title}">
+            <h3>${song.title}</h3>
+            <p>${song.artist}</p>
+          </a>
+        </div>
+      `).join("");
 
+    });
 
-data.forEach(song=>{
-
-
-if(
-song.title.toLowerCase().includes(text) ||
-song.artist.toLowerCase().includes(text)
-){
-
-
-result += `
-
-<div>
-
-<a href="${song.link}">
-
-${song.title} - ${song.artist}
-
-</a>
-
-</div>
-
-`;
-
-}
-
-
-});
-
-
-document.getElementById("search-result").innerHTML=result;
-
-
-});
-
-
-});
+  });
