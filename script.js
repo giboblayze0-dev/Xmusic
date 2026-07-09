@@ -34,7 +34,7 @@ function show(section){
   songs[section].slice(0, limit[section]).forEach(song => {
 
     html += `
-    <div class="song-card">
+    <div class="song">
 
       <a href="${song.link}">
         <img src="${song.image}" alt="${song.title}">
