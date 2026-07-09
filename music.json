@@ -1,7 +1,18 @@
-{
-    "title":"Limbika",
-    "section":"new",
-    "image":"https://res.cloudinary.com/dvvjrd7ax/image/upload/v1778436711/file_000000004dc471fbaf6fd0abf23158d6_nmdeeb.png",
-    "link":"mlee-lumbika.html"
+[
+  {
+    "image": "images/20years.jpg",
+    "section": "new",
+    "link": "/20_years_full_ep_by_jaycole/"
+  },
+  {
+    "image": "images/20years.jpg",
+    "section": "trending",
+    "link": "/20_years_full_ep_by_jaycole/"
+  },
+  {
+    "image": "images/20years.jpg",
+    "section": "album",
+    "link": "/20_years_full_ep_by_jaycole/"
   }
+]
 
