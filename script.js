@@ -37,9 +37,10 @@ function show(section){
     <div class="song">
 
       <a href="${song.url}">
-        <img src="${song.Image}" alt="${song.Title}">
-        <h3>${song.Title}</h3>
-      </a>
+  <img src="${song.image}" alt="${song.title}">
+  <h3>${song.title}</h3>
+  <p>${song.artist}</p>
+</a>
 
     </div>
     `;
