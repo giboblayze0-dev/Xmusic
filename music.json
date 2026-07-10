@@ -9,14 +9,14 @@
   {
     "title": "ok",
     "artist":"buy",
-    "image": "images/20years.jpg",
+    "image": "20years.jpg",
     "section": "trending",
     "link": "/20_years_full_ep_by_jaycole/"
   },
   {
     "title": "chapu",
     "artist": "like",
-    "image": "images/20years.jpg",
+    "image": "20years.jpg",
     "section": "album",
     "link": "/20_years_full_ep_by_jaycole/"
   }
