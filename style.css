@@ -1,1 +1,37 @@
+#results{
+    width:100%;
+    max-width:500px;
+    margin:10px auto;
+}
 
+.search-item{
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:10px;
+}
+
+.search-item a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    color:#000;
+}
+
+.search-item img{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    border-radius:6px;
+}
+
+.search-item h3{
+    margin:0;
+    font-size:16px;
+}
+
+.search-item p{
+    margin:3px 0 0;
+    color:#666;
+}
