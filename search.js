@@ -29,18 +29,16 @@ searchBox.addEventListener("input", function () {
   if (found.length === 0) {
     results.innerHTML = "<p>No results found.</p>";
     return;
-  }
-
   results.innerHTML = found.map(song => `
-    <div class="search-item">
-      <a href="${song.url}">
-        <img src="${song.image}" alt="${song.title}">
-        <div>
-          <h3>${song.title}</h3>
-          <p>${song.artist}</p>
-        </div>
-      </a>
-    </div>
-  `).join("");
+  <div class="search-item">
+    <a href="${song.link}">
+      <img src="${song.image}" alt="${song.title}">
+      <div>
+        <h3>${song.title}</h3>
+        <p>${song.artist}</p>
+      </div>
+    </a>
+  </div>
+`).join("");
 
 });
