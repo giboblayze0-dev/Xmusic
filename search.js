@@ -1,7 +1,7 @@
 const searchBox = document.getElementById("search");
 const results = document.getElementById("results");
 
-fetch("music.json")
+fetch("../music.json")
   .then(res => res.json())
   .then(data => {
 
