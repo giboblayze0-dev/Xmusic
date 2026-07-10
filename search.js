@@ -25,14 +25,14 @@ fetch("../music.json")
       }
 
       results.innerHTML = found.map(song => `
-        <div class="song">
-          <a href="../${song.link}">
-            <img src="../${song.image}" alt="${song.title}">
-            <h3>${song.title}</h3>
-            <p>${song.artist}</p>
-          </a>
-        </div>
-      `).join("");
+  <div class="song">
+    <a href="${song.link}">
+      <img src="${song.image}" alt="${song.title}">
+      <h3>${song.title}</h3>
+      <p>${song.artist}</p>
+    </a>
+  </div>
+`).join("");
 
     });
 
