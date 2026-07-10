@@ -10,7 +10,7 @@ let limit = {
   album: 6
 };
 
-fetch("../music.json")
+fetch("music.json")
 .then(res => res.json())
 .then(data => {
 
