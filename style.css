@@ -2,15 +2,15 @@
 
 .navbar {
   position: fixed;
-  top: 0;
+  top: 10;
   left: 5;
-  width: 220px;
+  width: 200px;
   height: 100vh;
   background: #111;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 500;
 }
 
 .logo {
@@ -41,7 +41,7 @@
 
 /* Move content away from navbar */
 main {
-  margin-left: 250px;
+  margin-left: 100px;
   padding: 20px;
 }
 
@@ -66,7 +66,7 @@ main {
 }
 
 main {
-  margin-left: 0;
+  margin-left: 5;
 }
 
 }
