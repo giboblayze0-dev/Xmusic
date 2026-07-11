@@ -1,3 +1,21 @@
+.load-more {
+  display: block;
+  margin: 25px auto;
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ffd700; /* Yellow */
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.load-more:hover {
+  background: #ffbf00;
+  transform: scale(1.05);
+}
 body{
     background:#111;
     color:#fff;
