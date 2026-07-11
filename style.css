@@ -1,37 +1,73 @@
-#results{
-    width:100%;
-    max-width:500px;
-    margin:10px auto;
-}
-
-.search-item{
-    margin:10px 0;
-    border:1px solid #ddd;
-    border-radius:8px;
-    padding:10px;
-}
-
-.search-item a{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-    color:#000;
-}
-
-.search-item img{
-    width:60px;
-    height:60px;
-    object-fit:cover;
-    border-radius:6px;
-}
-
-.search-item h3{
+/* Background */
+body{
     margin:0;
-    font-size:16px;
+    background:#000;
+    color:#fff;
+    font-family:Arial,sans-serif;
 }
 
-.search-item p{
-    margin:3px 0 0;
-    color:#666;
+/* Fixed search bar */
+.search-box{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#000;
+    padding:10px;
+    z-index:1000;
+}
+
+#search{
+    width:90%;
+    max-width:500px;
+    display:block;
+    margin:auto;
+    padding:12px;
+    font-size:18px;
+    border-radius:5px;
+    border:none;
+}
+
+/* Headings */
+h1{
+    color:blue;
+    text-align:center;
+}
+
+h2{
+    color:red;
+}
+
+p{
+    color:#fff;
+}
+
+/* Song display - 2 per row */
+.music-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    padding:80px 10px 20px;
+}
+
+.song{
+    text-align:center;
+}
+
+.song img{
+    width:100%;
+    border-radius:8px;
+}
+
+/* Load More button */
+.loadmore{
+    display:block;
+    margin:20px auto;
+    background:yellow;
+    color:#000;
+    border:none;
+    padding:12px 30px;
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
 }
