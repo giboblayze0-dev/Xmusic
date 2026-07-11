@@ -68,9 +68,10 @@ function loadMore(section) {
 // Search
 searchBox.addEventListener("input", function () {
 
-  const text = this.value.toLowerCase().trim();
+  const text = this.value.trim().toLowerCase();
 
   if (text === "") {
+    results.style.display = "none";
     results.innerHTML = "";
     return;
   }
@@ -81,13 +82,16 @@ searchBox.addEventListener("input", function () {
   );
 
   if (found.length === 0) {
+    results.style.display = "block";
     results.innerHTML = "<p>No results found.</p>";
     return;
   }
 
+  results.style.display = "block";
+
   results.innerHTML = found.map(song => `
     <div class="search-item">
-      <a href="${song.link}">
+      <a href="${song.link}" onclick="document.getElementById('results').style.display='none';">
         <img src="${song.image}" alt="${song.title}">
         <div>
           <h3>${song.title}</h3>
