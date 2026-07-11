@@ -17,7 +17,7 @@
   transform: scale(1.05);
 }
 body{
-    background:#111;
+    background:#white;
     color:#fff;
     font-family:Arial,sans-serif;
     margin:0;
@@ -76,19 +76,7 @@ audio{
     margin-top:8px;
 }
 
-.loadmore{
-    display:block;
-    width:220px;
-    margin:30px auto;
-    padding:15px;
-    background:#ffd700;
-    color:#000;
-    border:none;
-    border-radius:40px;
-    font-size:20px;
-    font-weight:bold;
-    cursor:pointer;
-}
+
 
 #search{
     display:block;
