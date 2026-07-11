@@ -1,15 +1,13 @@
-section h2{
-    text-align: center;
-    color: red;
-    width: 100%;
-    margin: 20px 0;
-}
-
 h1{
     text-align: center;
     color: blue;
-    width: 100%;
     margin: 20px 0;
+}
+
+h2{
+    text-align: center;
+    color: red;
+    margin: 20px 0 10px;
 }
 .music-container{
     display:grid;
@@ -87,29 +85,8 @@ body{
     border:none;
 }
 
-/* Headings */
-h1{
-    color:blue;
-    text-align:center;
-}
 
-h2{
-    color:red;
-}
 
 p{
     color:#fff;
-}
-
-/* Load More button */
-.loadmore{
-    display:block;
-    margin:20px auto;
-    background:yellow;
-    color:#000;
-    border:none;
-    padding:12px 30px;
-    font-size:16px;
-    border-radius:6px;
-    cursor:pointer;
 }
