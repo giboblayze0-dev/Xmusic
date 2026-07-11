@@ -1,156 +1,416 @@
-body{
-  background:#000;
-  color:#fff;
-  margin:0;
-  font-family:Arial,sans-serif;
-}
-
-.container{
-  width:95%;
-  max-width:1200px;
-  margin:auto;
-}
-
-.songs{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:15px;
-  justify-items:center;
-}
-
-.song{
-  width:140px;
-  text-align:center;
-}
-
-.song img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  border-radius:10px;
-}
-
-.song h3{
-  font-size:15px;
-  margin:8px 0 4px;
-}
-
-.song p{
-  font-size:13px;
-  color:#bbb;
-}
-
-button{
-  display:block;
-  margin:20px auto;
-  padding:10px 25px;
-  background:#ff0;
-  border:none;
-  border-radius:6px;
-  font-weight:bold;
-}
-
-body{
-    background: #000;
-    color: white;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-h1,
-h2{
+.about-us {
+    background-color: #000;
+    color: #fff;
     text-align: center;
+    padding: 40px 20px;
 }
 
-button{
-    display: block;
-    margin: 20px auto;
-    background: yellow;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
+.about-us h2 {
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 15px;
+}
+.menu-btn {
+    font-size: 30px;
     cursor: pointer;
 }
-.music-container{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-    padding:15px;
+
+#menu {
+    display: none;
+    list-style: none;
+    padding: 0;
 }
 
-.song{
-    text-align:center;
+#menu li {
+    padding: 10px;
 }
 
-.song img{
-    width:150px;
-    height:150px;
-    object-fit:cover;
-    border-radius:12px;
-    display:block;
-    margin:0 auto 10px;
-}
-
-.song h3{
-    font-size:18px;
-    color:#fff;
-    margin:8px 0 5px;
-    height:44px;
-}
-
-.song p{
-    color:#ccc;
-    font-size:16px;
-    margin:0 0 10px;
-    min-height:40px;
-}
-
-.song audio{
-    width:100%;
-    max-width:170px;
-}
-
-.song a{
-    display:inline-block;
-    margin-top:10px;
-    color:yellow;
-    text-decoration:none;
-    font-weight:bold;
-}
-/* Background */
-body{
-    margin:0;
-    background:#000;
-    color:#fff;
-    font-family:Arial,sans-serif;
-}
-
-/* Fixed search bar */
-.search-box{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:#000;
-    padding:10px;
-    z-index:1000;
-}
-
-#search{
-    width:90%;
-    max-width:500px;
-    display:block;
-    margin:auto;
-    padding:12px;
-    font-size:18px;
-    border-radius:5px;
-    border:none;
+#menu a {
+    text-decoration: none;
 }
 
 
+.song-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
 
+.song-card {
+    text-align: center;
+    background: #111;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.song-card img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 10px;
+}
+
+.song-card audio {
+    width: 100%;
+    max-width: 300px;
+}
+
+body {
+  background-color: #121212;
+  color: white;
+}
+
+p {
+  text-align: center;
+}
+body {
+  padding-top: 60px; /* same as nav height */
+}
+nav {
+  backdrop-filter: blur(10px);
+  background: rgba(13, 27, 42, 0.9);
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+ /* dark blue look */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+h2{
+  text-align: center;
+  
+}
 p{
-    color:#fff;
+  text-aligh: center;
+  
 }
+h1{
+  text-aligh: center;
+  
+}
+
+  .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: cente;
+  padding: 10px;
+}
+
+.logo {
+  color: red;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Mobile */
+.menu-toggle {
+  display: none;
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #111;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+audio {
+  width: 160px;       /* makes it smaller */
+  height: 30px;       /* reduces height */
+  transform: scale(0.9);
+}
+
+/* If audio is inside cards */
+.song-card audio {
+  width: 140px;
+  height: 28px;
+}
+
+/* Make controls tighter on mobile */
+@media (max-width: 600px) {
+  audio {
+    width: 120px;
+    height: 25px;
+  }
+}
+img {
+  width: 80%;          /* responsive */
+  max-width: 300px;    /* limit size */
+  height: auto;
+  display: block;
+  margin: 15px auto;
+  border-radius: 12px;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+}
+
+nav {
+  position: sticky;
+  top: 0;
+
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav h1 {
+  font-size: 18px;
+}
+
+nav input {
+  padding: 8px;
+  width: 50%;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.section {
+  padding: 15px;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+  color: #4da3ff;
+}
+
+.songs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.card {
+
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h3 {
+  font-size: 14px;
+  margin: 6px 0 2px;
+}
+
+.card p {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 10px;
+
+  
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.loadmore {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+
+  
+  cursor: pointer;
+}
+
+/* Mobile Fix */
+@media (max-width: 600px) {
+  nav input {
+    width: 60%;
+  }
+
+  .card img {
+    height: 120px;
+  }
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+
+
+  line-height: 1.5;
+}
+
+/* HEADER / NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav h1 {
+  font-size: 20px;
+  color: #1db954;
+}
+
+/* SEARCH BAR */
+nav input {
+  width: 40%;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+/* SECTIONS */
+.section {
+  padding: 20px;
+}
+
+.section h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-left: 4px solid #1db954;
+  padding-left: 10px;
+}
+
+/* SONG GRID */
+.songs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+}
+
+/* SONG CARD */
+.song {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.song:hover {
+  transform: scale(1.05);
+  background: #222;
+}
+
+.song img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.song h3 {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.song p {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* BUTTON */
+button.loadmore {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+
+  
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.loadmore:hover {
+  background: #17a74a;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav input {
+    width: 100%;
+  }
+
+  .songs {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .song h3 {
+    font-size: 12px;
+  }
+
+  .song p {
+    font-size: 11px;
+  }
+
+  nav h1 {
+    font-size: 18px;
+  }
+
+  
