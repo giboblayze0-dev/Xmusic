@@ -118,7 +118,7 @@ audio {
 }
 img {
   width: 80%;          /* responsive */
-  max-width: 300px;    /* limit size */
+  max-width: 150px;    /* limit size */
   height: auto;
   display: block;
   margin: 15px auto;
@@ -306,7 +306,7 @@ nav input {
 }
 
 .song img {
-  width: 100%;
+  width: 50%;
   border-radius: 10px;
 }
 
