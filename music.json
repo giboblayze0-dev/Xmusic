@@ -1,5 +1,12 @@
 [
   {
+    "title": "chisomo",
+    "artist":"Mkwasha-ft-Jahmia",
+    "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/Compress_20260526_202544_4336_jbodax.jpg",
+    "section": "new",
+    "link": "chisomo-Mkwasha-ft-Jahmia.html"
+  },
+  {
   
     "title": "ndatopa ine",
     "artist":"Gibo Blayze",
@@ -32,14 +39,14 @@
     "title": "chisomo",
     "artist":"Mkwasha-ft-Jahmia",
     "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/Compress_20260526_202544_4336_jbodax.jpg",
-    "section": "trending",
+    "section": "new",
     "link": "chisomo-Mkwasha-ft-Jahmia.html"
   },
   {
     "title": "chapu",
     "artist": "like",
     "image": "20years.jpg",
-    "section": "album",
+    "section": "new",
     "link": "20_years_full_ep_by_jaycole.html"
   }
 ]
