@@ -1,12 +1,9 @@
-body {
-  margin: 0;
-  background: black;
-}
+
 
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 5;
   width: 220px;
   height: 100vh;
   background: #111;
