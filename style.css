@@ -1,11 +1,12 @@
-.songs {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px; /* Space between songs */
-    padding: 10px;
+.song-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; /* space between songs */
 }
-.song {
-    margin: 15px;
+.song-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* space between songs */
 }
 
 #results {
