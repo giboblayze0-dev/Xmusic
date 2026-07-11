@@ -1,4 +1,31 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: black;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
+.logo {
+  color: blue;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.search-box input {
+  width: 220px;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.menu a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+}
 .search-box {
   position: sticky;
   top: 0;
