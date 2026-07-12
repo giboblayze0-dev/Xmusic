@@ -66,7 +66,7 @@ function loadMore(section) {
 }
 
 // Search
-searchBox.addEventListener("input", function () {
+searchBox.addEventListener("input", function () 
 
   const text = this.value.trim().toLowerCase();
 
