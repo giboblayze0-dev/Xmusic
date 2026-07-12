@@ -4,7 +4,7 @@
     "artist":"Jaycole_Mkwasha-ft-Jahmia",
     "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/Compress_20260526_202544_4336_jbodax.jpg",
     "section": "album",
-    "link": "music,/20_years_ep.html"
+    "link": "music/20_years_ep.html"
   },
   {
   
@@ -47,7 +47,7 @@
     "artist": "yop_maps-ft-makhazi",
     "image": "https://res.cloudinary.com/dvvjrd7ax/image/upload/1776088177113-780x470_xgpxwh.jpg",
     "section": "trending",
-    "link": "yop_maps-ft-makhazi-it's-over.html"
+    "link": "music/yop_maps-ft-makhazi-it's-over.html"
   }
 ]
 
