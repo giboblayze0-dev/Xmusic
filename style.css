@@ -1,36 +1,4 @@
-#new,
-#trending,
-#album {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 10px;
-}
 
-.song {
-  background: #111;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-}
-
-.song img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-
-.song h3 {
-  color: #fff;
-  font-size: 15px;
-  margin: 8px 5px 3px;
-}
-
-.song p {
-  color: #aaa;
-  font-size: 13px;
-  margin-bottom: 8px;
-}
 nav {
   display: flex;
   align-items: center;
