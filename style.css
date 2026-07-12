@@ -51,32 +51,14 @@ nav {
   font-weight: bold;
 }
 
-.search-box input {
-  width: 220px;
-  padding: 8px;
-  border-radius: 20px;
-}
+
 
 .menu a {
   color: white;
   margin: 10px;
   text-decoration: none;
 }
-.search-box {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  text-align: center;
-  padding: 10px;
-  background: black;
-}
 
-#search {
-  width: 90%;
-  max-width: 500px;
-  padding: 12px;
-  border-radius: 20px;
-  font-size: 16px;
 }.song-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
