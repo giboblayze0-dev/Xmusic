@@ -1,3 +1,13 @@
+
+const limit = {
+  new: 6,
+  trending: 6,
+  album: 6
+};
+function loadMore(section) {
+  limit[section] += 6;
+  show(section);
+}
 const songs = {
   new: [],
   trending: [],
