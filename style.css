@@ -1,4 +1,22 @@
+#new,
+#trending,
+#album {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 10px;
+}
 
+.song {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.song img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 nav {
   display: flex;
   align-items: center;
