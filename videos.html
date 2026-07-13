@@ -1,29 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zengomusic Videos</title>
+
 <style>
-.no-videos {
-    background: linear-gradient(135deg, #000000, #071a33, #003566);
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-    margin: 40px auto;
-    max-width: 600px;
-    border-radius: 20px;
-    border: 2px solid #008cff;
-    box-shadow: 0 0 25px rgba(0, 140, 255, 0.6);
+
+body{
+    background:#000;
+    color:white;
+    font-family:Arial, sans-serif;
+    text-align:center;
 }
 
-.no-videos h2 {
-    color: #ffd700;
-    font-size: 30px;
-    margin-bottom: 15px;
+h1{
+    color:#00aaff;
 }
 
-.no-videos p {
-    color: #ddd;
-    font-size: 18px;
+#video-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    padding:20px;
 }
+
+.video-card{
+    background:#111;
+    padding:10px;
+    border-radius:12px;
+}
+
+.video-card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.video-card h2{
+    color:red;
+    font-size:18px;
+}
+
+.video-card p{
+    color:white;
+}
+
+a{
+    text-decoration:none;
+}
+
+#loadMore{
+    background:#ffd000;
+    color:black;
+    border:none;
+    padding:12px 30px;
+    font-size:18px;
+    border-radius:8px;
+    cursor:pointer;
+    margin:20px;
+}
+
+@media(max-width:600px){
+
+#video-list{
+    grid-template-columns:1fr;
+}
+
+}
+
 </style>
 
-<div class="no-videos">
-    <h2>🎬 No Videos Available</h2>
-    <p>New music videos will be uploaded soon.</p>
-</div>
+</head>
+
+<body>
+
+<h1>Latest Videos</h1>
+
+<div id="video-list"></div>
+
+<button id="loadMore">Load More</button>
+
+
+<script src="videos.js"></script>
+
+</body>
+</html>
