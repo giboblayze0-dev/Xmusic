@@ -102,3 +102,43 @@ searchBox.addEventListener("input", function () {
   `).join("");
 
 });
+
+
+// Get current song from URL
+const currentPage = window.location.pathname;
+
+const currentSong = songs.find(song => 
+  currentPage.includes(song.link)
+);
+
+const relatedBox = document.getElementById("relatedSongs");
+
+if (relatedBox && currentSong) {
+
+  const relatedSongs = songs
+    .filter(song =>
+      song.link !== currentSong.link &&
+      song.artist === currentSong.artist
+    )
+    .slice(0, 6);
+
+
+  relatedSongs.forEach(song => {
+
+    relatedBox.innerHTML += `
+      <div class="song">
+
+        <a href="${song.link}">
+          <img src="${song.image}" alt="${song.title}">
+
+          <h3>${song.title}</h3>
+
+          <p>${song.artist}</p>
+        </a>
+
+      </div>
+    `;
+
+  });
+
+}
