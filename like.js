@@ -7,13 +7,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "YOUR_DATABASE_URL",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDI7b7BqUopaBfTC-P0vE1o5PVX3ustFOw",
+  authDomain: "xmusic-eb387.firebaseapp.com",
+  projectId: "xmusic-eb387",
+  storageBucket: "xmusic-eb387.firebasestorage.app",
+  messagingSenderId: "758209934631",
+  appId: "1:758209934631:web:cac68b8b63245c7e172502"
 };
 
 const app = initializeApp(firebaseConfig);
